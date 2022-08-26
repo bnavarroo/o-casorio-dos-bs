@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@app*": [ "src/app*" ],
+      "@assets*": [ "src/assets*" ],
+      "@config*": [ "src/config*" ],
+      "@mocks*": [ "src/mocks*" ],
+      "@pages*": [ "src/pages*" ],
+      "@shared*": [ "src/shared*" ],
+      "@styles*": [ "src/styles*" ],
+      "@templates*": [ "src/templates*" ],
+      "@utilities*": [ "src/utilities*" ],
+    }
+  }
+}
