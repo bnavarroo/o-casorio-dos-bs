@@ -21,14 +21,14 @@ const Theme: Readonly<ITheme> = {
   },
   header: {
     height: {
-      desktop: '205px',
-      mobile: '120px',
+      desktop: '265px',
+      mobile: '215px',
     },
   },
   footer: {
     height: {
-      desktop: '38px',
-      mobile: '64px',
+      desktop: '48px',
+      mobile: '74px',
     },
   },
 };

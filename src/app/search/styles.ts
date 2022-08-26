@@ -5,6 +5,8 @@ export const Form = styled(FlexCentralized).attrs({ $direction: 'column' })`
   font-size: 22px;
   text-align: center;
   margin-top: 2rem;
+  padding-left: 12px;
+  padding-right: 12px;
 
   ${({ theme }) => css`
     font-size: 16px;

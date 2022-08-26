@@ -7,7 +7,7 @@ export const Footer = styled(ContainerPage)`
   text-align: center;
   gap: 0.75rem;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 22px;
 
   &:before,
   &:after {
