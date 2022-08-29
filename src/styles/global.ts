@@ -7,11 +7,11 @@ const GlobalStyle = createGlobalStyle`
   ${cssReset}
 
   body {
-    background: #fdfaf5; // Mais amarelo: #fbf6ea;
+    background: #fdfaf5;
 
     &::after {
       content: '';
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100vw;

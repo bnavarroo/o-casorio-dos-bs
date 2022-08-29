@@ -1,7 +1,15 @@
+import { qna } from './helpers';
+import * as Styled from './styles';
+
 const Faq: React.FC = () => (
-  <h1 style={{ textAlign: 'center', fontSize: '26px', fontWeight: 600 }}>
-    Página em Construção
-  </h1>
+  <Styled.List>
+    {qna?.map((item) => (
+      <Styled.ListItem key={item.id}>
+        <Styled.Question>{item?.question}</Styled.Question>
+        <Styled.Answer dangerouslySetInnerHTML={{ __html: item?.answer }} />
+      </Styled.ListItem>
+    ))}
+  </Styled.List>
 );
 
 export default Faq;

@@ -53,4 +53,14 @@ export const guests: Array<IGuest> = [
     name: 'Regina Navarro',
     confirmed: 0,
   },
+  {
+    id: 'jinglebells',
+    name: 'William Natal',
+    confirmed: 0,
+  },
+  {
+    id: 'mana',
+    name: 'Franciele Paulino',
+    confirmed: 0,
+  },
 ];
