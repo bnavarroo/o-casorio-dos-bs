@@ -2,19 +2,17 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export async function middleware(req: NextRequest) {
-  const token = req.headers.get(process.env.SECRET_KEY as string) ?? '';
-  const isValidToken = token === process.env.SECRET_TOKEN;
+  if (req.nextUrl.pathname.includes('/api/')) {
+    const token = req.headers.get(process.env.SECRET_KEY as string) ?? '';
+    const isValidToken = token === process.env.SECRET_TOKEN;
 
-  if (!isValidToken) {
-    return NextResponse.rewrite(new URL('/api/auth/unauthorized', req.url));
+    if (!isValidToken) {
+      return NextResponse.rewrite(new URL('/api/auth/unauthorized', req.url));
+    }
   }
 
   return NextResponse.next();
 }
-
-export const config = {
-  matcher: ['/api/:path*'],
-};
 
 /*
 import { getIronSession } from 'iron-session/edge';
