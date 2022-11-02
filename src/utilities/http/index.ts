@@ -16,6 +16,7 @@ const getHttpRequestHeaders = (options: object = {}): Headers => {
   const headers = new Headers({
     Accept: 'application/json, text/plain, multipart/form-data, */*',
     'Content-Type': 'application/json; charset=UTF-8',
+    [process.env.SECRET_KEY as string]: process.env.SECRET_TOKEN as string,
     ...options,
   });
 
