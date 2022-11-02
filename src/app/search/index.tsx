@@ -11,7 +11,10 @@ import * as Styled from './styles';
 
 const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
   const [id, setId] = useState<string>(qsId as string);
-  const { guest, error, message, loading } = useGuest(id, persistedGuest);
+  const { guest, error, errorTitle, errorMessage, loading } = useGuest(
+    id,
+    persistedGuest
+  );
 
   useEffect(() => {
     if (guest?.id) {
@@ -40,10 +43,7 @@ const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
       <em>* o código de confirmação foi encaminhado junto com o convite.</em>
       {error && (
         <Styled.ErrorWrapper>
-          <ErrorBox
-            title={message}
-            msg="Verifique o código informado e tente novamente. Para dúvidas e mais informações acesse o link 'dúvidas e ajuda', localizado no canto superior direito da tela."
-          />
+          <ErrorBox title={errorTitle} msg={errorMessage} />
         </Styled.ErrorWrapper>
       )}
       {(loading || guest?.id) && <Loader />}

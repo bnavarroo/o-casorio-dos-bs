@@ -3,6 +3,7 @@ import { TStringMap, TObjectMap } from '@shared/types/_globals';
 export type THttpMethod = 'get' | 'post' | 'put' | 'delete';
 
 export interface IHttpResponse<T> {
+  status?: number;
   error: boolean;
   message?: string;
   data?: T;

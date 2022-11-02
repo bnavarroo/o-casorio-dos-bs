@@ -5,7 +5,7 @@ export type TBinary = 0 | 1;
 
 export type TStringMap = { [key: string]: string };
 
-export type TObjectMap = { [key: string]: object };
+export type TObjectMap<T = object> = { [key: string]: T };
 
 export type TCssSize =
   | `${number}${'px' | '%' | 'em' | 'rem' | 'vw' | 'vh'}`
