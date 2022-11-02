@@ -3,7 +3,11 @@ import type { NextRequest } from 'next/server';
 
 export default function middleware(req: NextRequest) {
   // eslint-disable-next-line no-console
-  console.log('>>> ', req);
+  console.log('>>> ', {
+    pathname: req.nextUrl.pathname,
+    headers: req.headers,
+    secret: process.env.SECRET_TOKEN,
+  });
   if (req.nextUrl.pathname.includes('/api/')) {
     const token = req.headers.get(process.env.SECRET_KEY as string) ?? '';
     const isValidToken = token === process.env.SECRET_TOKEN;
