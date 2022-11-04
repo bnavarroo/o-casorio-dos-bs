@@ -1,16 +1,17 @@
 import { IServerProps } from './_globals';
 
-export interface IGuestModel {
+interface IGuestBase {
   id: string;
   name: string;
+  internalName: string;
+  isChild: boolean;
   confirmed: boolean;
+}
+export interface IGuestModel extends IGuestBase {
   updatedAt?: Date;
 }
 
-export interface IGuest {
-  id: string;
-  name: string;
-  confirmed: boolean;
+export interface IGuest extends IGuestBase {
   updatedAt?: string;
 }
 

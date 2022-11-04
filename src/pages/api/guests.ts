@@ -13,14 +13,16 @@ export default async function handler(
   switch (method) {
     case 'GET': {
       const guests = await getGuestList();
-      res.status(200).json({ error: false, data: guests });
+      res.status(200).json({ status: 200, error: false, data: guests });
       break;
     }
     default: {
       res.setHeader('Allow', ['GET']);
-      res
-        .status(405)
-        .json({ error: true, message: `Method ${method} Not Allowed` }); // res.status(405).end(`Method ${method} Not Allowed`);
+      res.status(405).json({
+        status: 405,
+        error: true,
+        message: `Method ${method} Not Allowed`,
+      }); // res.status(405).end(`Method ${method} Not Allowed`);
     }
   }
 }

@@ -2,12 +2,12 @@ const fmtNumberToDate = (n = 0) =>
   n?.toString()?.length === 1 ? `0${n}` : n?.toString();
 
 export const getDateParsed = (d: Date) => ({
-  yyyy: d.getFullYear(),
-  mm: fmtNumberToDate(d.getMonth() + 1),
-  dd: fmtNumberToDate(d.getDate()),
-  hours: fmtNumberToDate(d.getHours()),
-  minutes: fmtNumberToDate(d.getMinutes()),
-  seconds: fmtNumberToDate(d.getSeconds()),
+  yyyy: d.getUTCFullYear(),
+  mm: fmtNumberToDate(d.getUTCMonth() + 1),
+  dd: fmtNumberToDate(d.getUTCDate()),
+  hours: fmtNumberToDate(d.getUTCHours()),
+  minutes: fmtNumberToDate(d.getUTCMinutes()),
+  seconds: fmtNumberToDate(d.getUTCSeconds()),
 });
 
 export const fmtDateToModel = (d: Date) => {

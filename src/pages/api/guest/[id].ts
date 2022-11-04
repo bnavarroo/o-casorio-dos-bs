@@ -18,11 +18,13 @@ export default async function handler(
     case 'GET': {
       const guest = await getGuest(id as string);
       if (!guest) {
-        res
-          .status(404)
-          .json({ error: true, message: 'Código não encontrado!' });
+        res.status(404).json({
+          status: 404,
+          error: true,
+          message: 'Código não encontrado!',
+        });
       } else {
-        res.status(200).json({ error: false, data: guest });
+        res.status(200).json({ status: 200, error: false, data: guest });
       }
       break;
     }
@@ -30,7 +32,7 @@ export default async function handler(
       try {
         const { guest } = body;
         const newGuest = await updateGuest(id as string, guest);
-        res.status(201).json({ error: false, data: newGuest });
+        res.status(201).json({ status: 201, error: false, data: newGuest });
       } catch (e: unknown) {
         const error = e as Error;
         res
@@ -42,9 +44,11 @@ export default async function handler(
     }
     default: {
       res.setHeader('Allow', ['GET', 'PUT']);
-      res
-        .status(405)
-        .json({ error: true, message: `Method ${method} Not Allowed` }); // res.status(405).end(`Method ${method} Not Allowed`);
+      res.status(405).json({
+        status: 405,
+        error: true,
+        message: `Method ${method} Not Allowed`,
+      }); // res.status(405).end(`Method ${method} Not Allowed`);
     }
   }
 }
