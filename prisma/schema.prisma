@@ -14,8 +14,17 @@ datasource db {
 }
 
 model Guest {
-  id String @id
-  name  String @default("")
+  id String @db.VarChar(20) @id
+  name  String @db.VarChar(50) @default("")
+  internalName  String @db.VarChar(50) @default("")
+  isChild  Boolean @default(false)
   confirmed Boolean @default(false)
   updatedAt DateTime @default("2022-10-15T11:30:00+02:00")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name  String @db.VarChar(30)
+  username  String @db.VarChar(20) @unique
+  password  String @db.VarChar(100)
 }

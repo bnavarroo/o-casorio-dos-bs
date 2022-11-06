@@ -15,6 +15,10 @@ export default function middleware(req: NextRequest) {
   return NextResponse.next();
 }
 
+export const config = {
+  matcher: ['/api/:path*'],
+};
+
 /*
 import { getIronSession } from 'iron-session/edge';
 import { sessionOptions } from '@utilities/middleware/session';

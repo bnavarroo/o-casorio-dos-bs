@@ -1,6 +1,12 @@
-export interface IUser {
-  id: string;
+export interface IUserModel {
+  id: number;
   name: string;
-  isAdmin: boolean;
-  isLoggedIn: boolean;
+  username: string;
+  password: string;
+}
+
+export interface IUser {
+  name: string;
+  username: string;
+  isLoggedIn?: boolean;
 }
