@@ -1,57 +1,45 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { getIronSession } from 'iron-session/edge';
+import { sessionOptions, protectedRoutes } from '@utilities/middleware/session';
 
-export default function middleware(req: NextRequest) {
+export const middleware = async (req: NextRequest) => {
+  const res = NextResponse.next();
   const { pathname } = req.nextUrl;
+  const session = await getIronSession(req, res, sessionOptions);
+  const { user } = session;
+
+  // API
   if (pathname.includes('/api/')) {
     const token = req.headers.get(process.env.SECRET_KEY as string) ?? '';
     const isValidToken = token === process.env.SECRET_TOKEN;
 
-    if (!isValidToken) {
+    // Protege a API e suas rotas restritas
+    if (
+      (isValidToken &&
+        protectedRoutes.includes(pathname) &&
+        !user?.isLoggedIn) ||
+      !isValidToken
+    ) {
       return NextResponse.rewrite(new URL('/api/auth/unauthorized', req.url));
     }
   }
 
-  return NextResponse.next();
-}
-
-export const config = {
-  matcher: ['/api/:path*'],
-};
-
-/*
-import { getIronSession } from 'iron-session/edge';
-import { sessionOptions } from '@utilities/middleware/session';
-
-export const middleware = async (req: NextRequest) => {
-  const res = NextResponse.next();
-  const session = await getIronSession(req, res, sessionOptions);
-
-  // do anything with session here:
-  const { user } = session;
-
-  // like mutate user:
-  // user.something = someOtherThing;
-  // or:
-  // session.user = someoneElse;
-
-  // uncomment next line to commit changes:
-  // await session.save();
-  // or maybe you want to destroy session:
-  // await session.destroy();
-
-  // eslint-disable-next-line no-console
-  console.log('from middleware', { user });
-
-  // demo:
-  if (!user?.isLoggedIn) {
-    return NextResponse.rewrite(new URL('/api/auth/unauthorized', req.url));
+  // ADMIN
+  if (pathname.includes('/admin')) {
+    if (!user?.isLoggedIn && !pathname.includes('login')) {
+      return NextResponse.redirect(new URL('/admin/login', req.url));
+    }
+    if (user?.isLoggedIn && pathname.includes('login')) {
+      return NextResponse.redirect(new URL('/admin/home', req.url));
+    }
   }
 
   return res;
 };
 
 export const config = {
-  matcher: ['/api/:path*'],
+  matcher: ['/api/:path*', '/admin/:path*'],
 };
-*/
+
+export default middleware;

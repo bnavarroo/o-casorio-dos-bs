@@ -13,10 +13,12 @@ const Theme: Readonly<ITheme> = {
   colors: {
     primary: '#367d60',
     secondary: '#c7b189',
+    tertiary: '#9ab9ad',
     text: {
       default: '#564d37',
       onPrimary: '#FFF',
       onSecondary: '#000',
+      onTertiary: '#FFF',
     },
   },
   header: {

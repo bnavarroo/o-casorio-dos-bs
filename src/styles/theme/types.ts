@@ -16,6 +16,7 @@ export interface IBreakpoints {
 export interface IColors {
   primary: string;
   secondary: string;
+  tertiary: string;
 }
 
 export interface IColorsText {
@@ -23,6 +24,7 @@ export interface IColorsText {
     default: string;
     onPrimary: string;
     onSecondary: string;
+    onTertiary: string;
   };
 }
 
