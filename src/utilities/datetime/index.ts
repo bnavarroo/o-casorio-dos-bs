@@ -12,7 +12,7 @@ export const getDateParsed = (d: Date) => ({
 
 export const fmtDateToModel = (d: Date) => {
   const { yyyy, mm, dd, hours, minutes, seconds } = getDateParsed(d);
-  return `${yyyy}-${mm}-${dd}T${hours}:${minutes}:${seconds}`;
+  return `${yyyy}-${mm}-${dd}T${hours}:${minutes}:${seconds}+03:00`;
 };
 
 export const fmtDateToUI = (d: Date) => {
