@@ -1,13 +1,14 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { parseCookies } from 'nookies';
 import { COOKIES_CONFIG } from '@config/cookies';
-import { IServerProps } from '@shared/types/_globals';
+import { TGuestFromServer } from '@shared/types/guest';
+import { getGuestFromCookies } from '@utilities/guest';
 import MainTemplate from '@templates/main';
 import Success from '@app/success';
 
-const SuccessPage: NextPage<IServerProps<{ sessionId: string }>> = () => (
+const SuccessPage: NextPage<TGuestFromServer> = ({ serverProps }) => (
   <MainTemplate>
-    <Success />
+    <Success persistedGuest={serverProps.persistedGuest} />
   </MainTemplate>
 );
 
@@ -26,10 +27,12 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     };
   }
 
+  const persistedGuest = getGuestFromCookies(ctx);
+
   return {
     props: {
       serverProps: {
-        sessionId,
+        persistedGuest,
       },
     },
   };

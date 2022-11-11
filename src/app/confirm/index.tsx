@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import { useGuest } from '@utilities/hooks/use-guest';
 import { Loader } from '@shared/components/loader';
 import { IGuestProps } from '@shared/types/guest';
+import { guestLogout, handleGuestLogout } from '@utilities/guest';
 import Buttons from './components/buttons';
 import Info from './components/info';
-import { logout, handleLogout, getMessage } from './helpers';
+import { getMessage } from './helpers';
 import * as Styled from './styles';
 
 const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
@@ -13,7 +14,8 @@ const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
 
   useEffect(() => {
     if (error) {
-      logout(id);
+      const redirectTo = id ? `/?id=${id}` : '/';
+      guestLogout(redirectTo);
     }
   }, [error, id]);
 
@@ -21,7 +23,7 @@ const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
     <Styled.Wrapper>
       <Styled.Title as="p">
         Olá {guest?.name}!{' '}
-        <button type="button" onClick={handleLogout()}>
+        <button type="button" onClick={handleGuestLogout()}>
           Não é você? sair.
         </button>
       </Styled.Title>
