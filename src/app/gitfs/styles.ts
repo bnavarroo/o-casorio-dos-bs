@@ -20,9 +20,14 @@ export const Title = styled.h1`
 
 export const Content = styled.p`
   ${fontSizeDefault}
-  line-height: 22px;
-  text-align: justify;
+  line-height: 26px;
+  text-align: center;
   margin: 20px 0 40px 0;
+
+  .subtitle {
+    font-size: 24px;
+    line-height: 30px;
+  }
 `;
 
 export const PixBox = styled(FlexWrapper).attrs({ $direction: 'column' })`
