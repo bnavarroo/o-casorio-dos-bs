@@ -3,23 +3,25 @@ import { memo } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Logo from '@shared/components/logo';
+import { getHeaderLinks } from './helpers';
 import * as Styled from './styles';
 
 export const HeaderComponent: React.FC = () => {
   const { pathname } = useRouter();
-  const isFaqPage = pathname?.includes('/faq');
-  const link = isFaqPage ? '/' : '/faq';
-  const linkText = isFaqPage ? 'voltar' : 'dúvidas e ajuda';
-  const linkTarget = isFaqPage ? '_self' : '_blank';
+  const links = getHeaderLinks(pathname);
 
   return (
     <Styled.Header as="header">
       <Styled.Wrapper>
-        <Styled.LinkWrapper>
-          <Link href={link}>
-            <a target={linkTarget}>{linkText}</a>
-          </Link>
-        </Styled.LinkWrapper>
+        <Styled.LinkContainer>
+          <Styled.LinkWrapper>
+            {links?.map(({ link, text, target }) => (
+              <Link key={link} href={link}>
+                <a target={target}>{text}</a>
+              </Link>
+            ))}
+          </Styled.LinkWrapper>
+        </Styled.LinkContainer>
         <Logo />
       </Styled.Wrapper>
     </Styled.Header>
