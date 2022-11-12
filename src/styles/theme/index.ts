@@ -24,7 +24,7 @@ const Theme: Readonly<ITheme> = {
   header: {
     height: {
       desktop: '265px',
-      mobile: '215px',
+      mobile: '235px',
     },
   },
   footer: {
