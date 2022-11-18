@@ -20,26 +20,26 @@ export const Wrapper = styled(FlexCentralized).attrs({ $direction: 'column' })`
 export const LinkContainer = styled.div`
   position: relative;
   align-self: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
 
   ${({ theme }) => css`
     @media (min-width: ${theme.breakpoints.desktopSmall.min}) {
       align-self: flex-end;
-      margin-top: 0px;
-      margin-bottom: 0px;
     }
   `}
 `;
 
 export const LinkWrapper = styled(FlexWrapper)`
   gap: 15px;
+  padding-top: 20px;
+  padding-bottom: 10px;
 
   ${({ theme }) => css`
     @media (min-width: ${theme.breakpoints.desktopSmall.min}) {
       position: absolute;
       top: 12px;
       right: 0;
+      padding-top: 0px;
+      padding-bottom: 0px;
     }
   `}
 

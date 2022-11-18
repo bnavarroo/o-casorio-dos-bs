@@ -18,7 +18,7 @@ export const Title = styled.h1`
   `}
 `;
 
-export const Content = styled.p`
+export const Content = styled.div`
   ${fontSizeDefault}
   line-height: 26px;
   text-align: center;
@@ -33,12 +33,22 @@ export const Content = styled.p`
 export const PixBox = styled(FlexWrapper).attrs({ $direction: 'column' })`
   ${fontSizeDefault}
   text-align: center;
+
+  i {
+    display: table;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 6px;
+  }
 `;
 
 export const PixValue = styled.h2`
   font-size: 40px;
   letter-spacing: 6px;
   margin-top: 20px;
+  cursor: copy;
 `;
 
 export const PixName = styled.p`

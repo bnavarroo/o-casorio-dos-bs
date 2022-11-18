@@ -1,8 +1,11 @@
-import type { GetServerSideProps } from 'next';
-import { getSSRProps } from '@app/search/helpers';
-import Search from './search';
+import type { NextPage } from 'next';
+import MainTemplate from '@templates/main';
+import Home from '@app/home';
 
-export default Search;
+const HomePage: NextPage = () => (
+  <MainTemplate>
+    <Home />
+  </MainTemplate>
+);
 
-export const getServerSideProps: GetServerSideProps = async (ctx) =>
-  getSSRProps(ctx);
+export default HomePage;
