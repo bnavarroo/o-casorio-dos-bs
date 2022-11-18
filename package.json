@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "4.4.0",
+    "copy-to-clipboard": "^3.3.3",
     "crypto-js": "^4.1.1",
     "iron-session": "^6.3.1",
     "next": "12.3.3",
