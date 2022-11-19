@@ -1,12 +1,16 @@
 import { useState } from 'react';
-import { Loader } from '@shared/components/loader';
+import { withLoader } from '@utilities/hoc/with-loader';
+import { IInjectedProps } from '@utilities/hoc/with-loader/types';
 import { ErrorBox } from '@shared/components/error-box';
 import { IProps } from './types';
 import { handleClickButton, errorData } from './helpers';
 import * as Styled from './styles';
 
-export const ButtonsComponent: React.FC<IProps> = ({ id, confirmed }) => {
-  const [loading, setLoading] = useState<boolean>(false);
+export const ButtonsComponent: React.FC<IProps & IInjectedProps> = ({
+  id,
+  confirmed,
+  setLoading,
+}) => {
   const [error, setError] = useState<boolean>(false);
 
   return (
@@ -26,7 +30,6 @@ export const ButtonsComponent: React.FC<IProps> = ({ id, confirmed }) => {
           Cancelar confirmação
         </Styled.CancelButton>
       )}
-      {loading && <Loader />}
       {error && (
         <Styled.ErrorWrapper>
           <ErrorBox {...errorData} />
@@ -36,4 +39,4 @@ export const ButtonsComponent: React.FC<IProps> = ({ id, confirmed }) => {
   );
 };
 
-export default ButtonsComponent;
+export default withLoader(ButtonsComponent);

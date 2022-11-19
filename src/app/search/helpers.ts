@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { getGuestFromCookies } from '@utilities/guest';
-import { TNextCtx, IRedirect } from '@shared/types/_globals';
+import { TNextCtx, IRedirect, TSetState } from '@shared/types/_globals';
 import { TGuestFromServer } from '@shared/types/guest';
 
 export const getSSRProps = (
@@ -32,7 +32,7 @@ export const getSSRProps = (
 
 export const handleSubmit = (
   e: ChangeEvent<HTMLFormElement>,
-  setState: Dispatch<SetStateAction<string>>
+  setState: TSetState<string>
 ) => {
   e.preventDefault();
 

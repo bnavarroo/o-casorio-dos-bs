@@ -1,15 +1,12 @@
 /* eslint-disable indent */
 import Router from 'next/router';
-import { Dispatch, SetStateAction } from 'react';
 import { getEndpoint } from '@config/api';
 import { executeHttpRequest } from '@utilities/http';
+import { TSetState } from '@shared/types/_globals';
 import { IUser } from '@shared/types/user';
 
 export const onSubmit =
-  (
-    setError: Dispatch<SetStateAction<string>>,
-    setLoading: Dispatch<SetStateAction<boolean>>
-  ) =>
+  (setError: TSetState<string>, setLoading: TSetState<boolean>) =>
   async (data: object) => {
     setLoading(true);
     const url = getEndpoint('user');
