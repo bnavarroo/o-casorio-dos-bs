@@ -1,6 +1,4 @@
-/* eslint-disable no-console */
 /* eslint-disable indent */
-import { Dispatch, SetStateAction } from 'react';
 import Router from 'next/router';
 import { setCookie } from 'nookies';
 import { COOKIES_CONFIG } from '@config/cookies';
@@ -8,6 +6,7 @@ import { EVENT_CONFIG } from '@config/event';
 import { getEndpoint } from '@config/api';
 import { executeHttpRequest } from '@utilities/http';
 import { getGuestFromCookies } from '@utilities/guest';
+import { TSetState } from '@shared/types/_globals';
 import { IGuest } from '@shared/types/guest';
 
 const randomString = (size = 8) => {
@@ -29,8 +28,8 @@ export const handleClickButton =
   (
     id: string,
     value: boolean,
-    setLoading: Dispatch<SetStateAction<boolean>>,
-    setError: Dispatch<SetStateAction<boolean>>
+    setLoading: TSetState<boolean>,
+    setError: TSetState<boolean>
   ) =>
   async () => {
     setLoading(true);
@@ -67,6 +66,7 @@ export const handleClickButton =
     } else {
       setLoading(false);
       setError(true);
+      // eslint-disable-next-line no-console
       console.error('Houve um erro inesperado:', response?.message);
     }
   };

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { withLoader } from '@utilities/hoc/with-loader';
+import { IInjectedProps } from '@utilities/hoc/with-loader/types';
 import { Input } from '@styles/ui/input';
-import { Loader } from '@shared/components/loader';
 import { ErrorBox } from '@shared/components/error-box';
 import { onSubmit } from './helpers';
 import * as Styled from './styles';
 
-const AdmLogin: React.FC = () => {
-  const [loading, setLoading] = useState<boolean>(false);
+const AdmLogin: React.FC<IInjectedProps> = ({ setLoading }) => {
   const [error, setError] = useState<string>('');
   const { register, handleSubmit } = useForm();
 
@@ -33,9 +33,8 @@ const AdmLogin: React.FC = () => {
           <ErrorBox title={error} />
         </Styled.ErrorWrapper>
       )}
-      {loading && <Loader />}
     </>
   );
 };
 
-export default AdmLogin;
+export default withLoader(AdmLogin);

@@ -1,5 +1,6 @@
 import { ParsedUrlQuery } from 'querystring';
 import type { GetServerSidePropsContext, PreviewData } from 'next';
+import { Dispatch, SetStateAction } from 'react';
 
 export type TBinary = 0 | 1;
 
@@ -27,3 +28,5 @@ export type TNextCtx = GetServerSidePropsContext<
   ParsedUrlQuery,
   PreviewData
 > | null;
+
+export type TSetState<T> = Dispatch<SetStateAction<T>>;
