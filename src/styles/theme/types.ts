@@ -28,20 +28,9 @@ export interface IColorsText {
   };
 }
 
-export interface ISizeOnDevice {
-  desktop: TUnitSize;
-  mobile: TUnitSize;
-}
-
 export interface ITheme {
   fontSize: TUnitSize;
   fontWeight: number;
   breakpoints: IBreakpoints;
   colors: IColors & IColorsText;
-  header: {
-    height: ISizeOnDevice;
-  };
-  footer: {
-    height: ISizeOnDevice;
-  };
 }

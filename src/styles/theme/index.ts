@@ -21,18 +21,6 @@ const Theme: Readonly<ITheme> = {
       onTertiary: '#FFF',
     },
   },
-  header: {
-    height: {
-      desktop: '265px',
-      mobile: '245px',
-    },
-  },
-  footer: {
-    height: {
-      desktop: '48px',
-      mobile: '74px',
-    },
-  },
 };
 
 export default Theme;

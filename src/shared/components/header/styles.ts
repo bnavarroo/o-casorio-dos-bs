@@ -6,15 +6,7 @@ export const Header = styled(ContainerPage)``;
 
 export const Wrapper = styled(FlexCentralized).attrs({ $direction: 'column' })`
   width: 100%;
-
-  ${({ theme }) => css`
-    font-size: 12px;
-    height: ${theme.header.height.mobile};
-    @media (min-width: ${theme.breakpoints.tablet.min}) {
-      font-size: 14px;
-      height: ${theme.header.height.desktop};
-    }
-  `}
+  font-size: 12px;
 `;
 
 export const LinkContainer = styled.div`
