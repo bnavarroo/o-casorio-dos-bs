@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components';
+import { IStyledWrapperProps } from './types';
 
-export const Wrapper = styled.div`
-  width: 100%;
-  max-width: 200px;
-  height: auto;
+export const Wrapper = styled.div<IStyledWrapperProps>`
+  ${({ theme, $widthDesktop, $widthMobile }) => css`
+    width: 100%;
+    max-width: ${$widthMobile};
+    height: auto;
 
-  ${({ theme }) => css`
     @media (min-width: ${theme.breakpoints.tablet.min}) {
-      max-width: 240px;
+      max-width: ${$widthDesktop};
     }
   `}
 

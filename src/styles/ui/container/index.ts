@@ -1,5 +1,14 @@
 import styled, { css } from 'styled-components';
+import { FlexWrapper } from '@styles/ui/flex';
 import { IProps } from './types';
+
+export const ContainerTemplate = styled(FlexWrapper).attrs({
+  $direction: 'column',
+})`
+  justify-content: space-between;
+  width: 100%;
+  min-height: 99.8vh;
+`;
 
 export const ContainerPage = styled.div<IProps>`
   width: 100%;
