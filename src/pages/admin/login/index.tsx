@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
-import MainTemplate from '@templates/main';
+import AdminTemplate from '@templates/admin';
 import AdmLogin from '@app/admin/login';
 
 const AdmLoginPage: NextPage = () => (
-  <MainTemplate>
+  <AdminTemplate>
     <AdmLogin />
-  </MainTemplate>
+  </AdminTemplate>
 );
 
 export default AdmLoginPage;

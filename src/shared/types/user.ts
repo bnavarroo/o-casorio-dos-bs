@@ -1,3 +1,5 @@
+import { IServerProps } from './_globals';
+
 export interface IUserModel {
   id: number;
   name: string;
@@ -10,3 +12,5 @@ export interface IUser {
   username: string;
   isLoggedIn?: boolean;
 }
+
+export type TUserFromServer = IServerProps<{ user: IUser }>;

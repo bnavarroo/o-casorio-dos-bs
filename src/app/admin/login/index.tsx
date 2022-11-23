@@ -13,7 +13,9 @@ const AdmLogin: React.FC<IInjectedProps> = ({ setLoading }) => {
 
   return (
     <>
-      <Styled.Title>Área Administrativa</Styled.Title>
+      <Styled.Title>
+        Informe os dados de usuário e senha para prosseguir
+      </Styled.Title>
       <Styled.Form onSubmit={handleSubmit(onSubmit(setError, setLoading))}>
         <Styled.FieldWrapper>
           <label htmlFor="username">Usuário</label>

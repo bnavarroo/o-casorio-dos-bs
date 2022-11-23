@@ -32,7 +32,7 @@ const Gifts: React.FC = () => {
         com o fato de não ficarmos com o presente que nos foi dado com tanto
         amor por vocês.
         <br />
-        Já que o pix está na moda: E aí,&nbsp;
+        Já que o pix está na moda... <br /> <br />E aí,&nbsp;
         <b className="subtitle">pode ser no PIX</b>?
       </Styled.Content>
       <Styled.PixBox>

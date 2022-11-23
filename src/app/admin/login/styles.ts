@@ -22,18 +22,12 @@ export const Form = styled.form`
   `}
 `;
 
-export const Title = styled.h1`
+export const Title = styled.h2`
   text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  margin-bottom: 26px;
-
-  ${({ theme }) => css`
-    @media (min-width: ${theme.breakpoints.tablet.min}) {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-    }
-  `}
+  font-size: 1.25em;
+  line-height: 1.25em;
+  margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 export const FieldWrapper = styled(FlexWrapper).attrs({ $direction: 'column' })`

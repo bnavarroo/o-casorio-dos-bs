@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import MainTemplate from '@templates/main';
-import Gifts from '@app/gitfs';
+import Gifts from '@app/gifts';
 
 const GiftsPage: NextPage = () => (
   <MainTemplate>
