@@ -5,6 +5,7 @@ const apiRoutes: { [key: string]: string } = {
   guest: `${base}/guest`,
   guestList: `${base}/guest/list`,
   user: `${base}/user`,
+  login: `${base}/login`,
   logout: `${base}/logout`,
 };
 
