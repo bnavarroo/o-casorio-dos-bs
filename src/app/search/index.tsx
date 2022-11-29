@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { useGuest } from '@utilities/hooks/use-guest';
 import { ErrorBox } from '@shared/components/error-box';
 import { Loader } from '@shared/components/loader';
-import { Input } from '@styles/ui/input';
+import { Input, InputWrapperButton } from '@styles/ui/input';
 import SearchIcon from '@assets/img/search-icon.svg';
 import { IGuestProps } from '@shared/types/guest';
 import { handleSubmit } from './helpers';
@@ -28,7 +28,7 @@ const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
       onSubmit={(e: ChangeEvent<HTMLFormElement>) => handleSubmit(e, setId)}
     >
       <label htmlFor="guestId">Informe o código de confirmação</label>
-      <Styled.InputWrapper>
+      <InputWrapperButton $width="500px">
         <Input
           type="text"
           name="guestId"
@@ -39,7 +39,7 @@ const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
         <button type="submit">
           <SearchIcon />
         </button>
-      </Styled.InputWrapper>
+      </InputWrapperButton>
       <em>* o código de confirmação foi encaminhado junto com o convite.</em>
       {error && (
         <Styled.ErrorWrapper>

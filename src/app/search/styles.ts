@@ -26,31 +26,6 @@ export const Form = styled(FlexCentralized).attrs({ $direction: 'column' })`
   }
 `;
 
-export const InputWrapper = styled(FlexCentralized)`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.secondary};
-  position: relative;
-  max-width: 100%;
-  width: 500px;
-
-  button {
-    font-size: 1em;
-    width: auto;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    bottom: 6px;
-    svg {
-      width: 1.75em;
-      transform: rotate(270deg);
-      fill: ${({ theme }) => theme.colors.secondary};
-    }
-  }
-
-  input {
-    font-size: 2em;
-  }
-`;
-
 export const ErrorWrapper = styled.div`
   margin-top: 20px;
   font-size: 20px;

@@ -44,7 +44,6 @@ export const getUser = async (
     return {
       name: user?.name,
       username: user?.username,
-      isLoggedIn: !!user,
     };
   }
 

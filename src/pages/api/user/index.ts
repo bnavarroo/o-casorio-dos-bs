@@ -1,7 +1,5 @@
 /* eslint-disable indent */
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withIronSessionApiRoute } from 'iron-session/next';
-import { sessionOptions } from '@utilities/middleware/session';
 import { IHttpResponse } from '@utilities/http/types';
 import { getUser, createUser } from '@utilities/client/user';
 import { IUser } from '@shared/types/user';
@@ -53,4 +51,4 @@ async function handler(
   }
 }
 
-export default withIronSessionApiRoute(handler, sessionOptions);
+export default handler;

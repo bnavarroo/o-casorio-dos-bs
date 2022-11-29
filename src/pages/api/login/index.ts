@@ -23,9 +23,14 @@ async function handler(
           message: 'Usuário ou Senha inválidos.',
         });
       } else {
-        req.session.user = user;
+        const loggedUser = { ...user, isLoggedIn: true };
+        req.session.user = loggedUser;
         await req.session.save();
-        res.status(200).json({ status: 200, error: false, data: user });
+        res.status(200).json({
+          status: 200,
+          error: false,
+          data: loggedUser,
+        });
       }
       break;
     }
