@@ -1,7 +1,9 @@
 /* eslint-disable indent */
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withIronSessionApiRoute } from 'iron-session/next';
+import { sessionOptions } from '@utilities/middleware/session';
 import { IHttpResponse } from '@utilities/http/types';
-import { getUser, createUser } from '@utilities/client/user';
+import { getUser } from '@utilities/client/user';
 import { IUser } from '@shared/types/user';
 
 async function handler(
@@ -11,7 +13,7 @@ async function handler(
   const { body, method } = req;
 
   switch (method) {
-    case 'GET': {
+    case 'POST': {
       const { username, password } = body;
       const user = await getUser(username, password);
       if (!user) {
@@ -21,22 +23,14 @@ async function handler(
           message: 'Usuário ou Senha inválidos.',
         });
       } else {
-        res.status(200).json({ status: 200, error: false, data: user });
-      }
-      break;
-    }
-
-    case 'POST': {
-      const { name, username, password } = body;
-      const user = await createUser(name, username, password);
-      if (!user) {
-        res.status(500).json({
-          status: 500,
-          error: true,
-          message: 'Erro ao criar usuário',
+        const loggedUser = { ...user, isLoggedIn: true };
+        req.session.user = loggedUser;
+        await req.session.save();
+        res.status(200).json({
+          status: 200,
+          error: false,
+          data: loggedUser,
         });
-      } else {
-        res.status(200).json({ status: 200, error: false, data: user });
       }
       break;
     }
@@ -51,4 +45,4 @@ async function handler(
   }
 }
 
-export default handler;
+export default withIronSessionApiRoute(handler, sessionOptions);

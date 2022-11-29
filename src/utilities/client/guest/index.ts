@@ -14,7 +14,13 @@ const fmtGuestReturned = (guest: IGuest | IGuestModel | null) => {
 };
 
 export const getGuestList = async () => {
-  const guests: Array<IGuestModel> = await client.guest.findMany();
+  const guests: Array<IGuestModel> = await client.guest.findMany({
+    orderBy: [
+      {
+        updatedAt: 'desc',
+      },
+    ],
+  });
   const formattedGuests = guests?.map(fmtGuestReturned);
   return formattedGuests as Array<IGuest>;
 };

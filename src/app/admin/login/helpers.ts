@@ -9,7 +9,7 @@ export const onSubmit =
   (setError: TSetState<string>, setLoading: TSetState<boolean>) =>
   async (data: object) => {
     setLoading(true);
-    const url = getEndpoint('user');
+    const url = getEndpoint('login');
     const response = await executeHttpRequest<IUser>({
       url,
       method: 'post',

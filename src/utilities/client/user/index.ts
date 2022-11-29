@@ -6,7 +6,7 @@ export const createUser = async (
   name: string,
   username: string,
   password: string
-) => {
+): Promise<IUser | null> => {
   const encryptedPassword = encrypt(password);
 
   const user: IUserModel | null = await client.user.create({
@@ -19,7 +19,6 @@ export const createUser = async (
 
   if (user) {
     return {
-      id: 1,
       name: user?.name,
       username: user?.username,
       isLoggedIn: false,
@@ -29,7 +28,10 @@ export const createUser = async (
   return null;
 };
 
-export const getUser = async (username: string, password: string) => {
+export const getUser = async (
+  username: string,
+  password: string
+): Promise<IUser | null> => {
   const encryptedPassword = encrypt(password);
   const user: IUserModel | null = await client.user.findFirst({
     where: {
@@ -42,8 +44,7 @@ export const getUser = async (username: string, password: string) => {
     return {
       name: user?.name,
       username: user?.username,
-      isLoggedIn: !!user,
-    } as IUser;
+    };
   }
 
   return null;
