@@ -35,6 +35,17 @@ export const getGuest = async (id: string) => {
   return fmtGuestReturned(guest);
 };
 
+export const createGuest = async (guest: IGuestModel) => {
+  const newGuest: IGuestModel | null = await client.guest.create({
+    data: {
+      ...guest,
+      updatedAt: fmtDateToModel(new Date()),
+    },
+  });
+
+  return fmtGuestReturned(newGuest) as IGuest;
+};
+
 export const updateGuest = async (id: string, guest: IGuestModel) => {
   const updatedGuest: IGuestModel | null = await client.guest.update({
     where: {

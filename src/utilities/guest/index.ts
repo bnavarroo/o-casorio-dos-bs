@@ -21,5 +21,5 @@ export const guestLogout = (redirectTo = '/'): void => {
   }, 1000);
 };
 
-// eslint-disable-next-line prettier/prettier
-export const handleGuestLogout = (redirectTo = '/') => (): void => guestLogout(redirectTo);
+export const handleGuestLogout = (redirectTo?: string) => (): void =>
+  guestLogout(redirectTo);
