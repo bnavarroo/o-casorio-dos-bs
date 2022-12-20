@@ -830,6 +830,13 @@ export const guests: Array<IGuest> = [
     confirmed: false,
   },
   {
+    id: 'sl5uYm',
+    name: 'Acompanhante Vini',
+    internalName: 'Acompanhante Filho do Tio Nildo',
+    isChild: false,
+    confirmed: false,
+  },
+  {
     id: 'ouR5a7',
     name: 'Tia Téia',
     internalName: 'Tia Téia',
@@ -844,9 +851,23 @@ export const guests: Array<IGuest> = [
     confirmed: false,
   },
   {
+    id: 'H7b3Px',
+    name: 'Acompanhante Raul',
+    internalName: 'Acompanhante filho da Tia Téia',
+    isChild: false,
+    confirmed: false,
+  },
+  {
     id: 'daWrvT',
     name: 'Pedro',
     internalName: 'filho da Tia Téia',
+    isChild: false,
+    confirmed: false,
+  },
+  {
+    id: 'm03Tty',
+    name: 'Acompanhante Pedro',
+    internalName: 'Acompanhante filho da Tia Téia',
     isChild: false,
     confirmed: false,
   },
@@ -994,6 +1015,13 @@ export const guests: Array<IGuest> = [
     id: '4SzyHT',
     name: 'Julia',
     internalName: 'Julia da Edi',
+    isChild: false,
+    confirmed: false,
+  },
+  {
+    id: '9Ybx5P',
+    name: 'Ângelo',
+    internalName: 'Namorado da Júlia da Edi',
     isChild: false,
     confirmed: false,
   },
@@ -1326,6 +1354,20 @@ export const guests: Array<IGuest> = [
     isChild: false,
     confirmed: false,
   },
+  {
+    id: 'aB2y3w',
+    name: 'Sueli Casali',
+    internalName: 'Mãe do Will',
+    isChild: false,
+    confirmed: false,
+  },
+  {
+    id: '5PV32t',
+    name: 'Joanna Casali',
+    internalName: 'Tia do Will',
+    isChild: false,
+    confirmed: false,
+  },
 ];
 
 /*
@@ -1337,6 +1379,6 @@ guests.forEach((guest, index) => {
   }
   scriptStr += `('${guest.id}', '${guest.name}', '${guest.internalName}', ${
     guest.isChild ? 1 : 0
-  }, ${guest.confirmed ? 1 : 0}, '2022-11-05T09:24:00+02:00')`;
+  }, ${guest.confirmed ? 1 : 0}, '2022-11-05T09:24:00+00:00')`;
 });
 */

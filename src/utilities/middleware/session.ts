@@ -12,7 +12,7 @@ export const sessionOptions: IronSessionOptions = {
   },
 };
 
-export const protectedRoutes = ['/api/guest/list'];
+export const protectedRoutes = ['/api/guest'];
 
 declare module 'iron-session' {
   interface IronSessionData {

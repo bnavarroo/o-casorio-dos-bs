@@ -32,7 +32,7 @@ const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
       <Buttons id={guest?.id as string} confirmed={!!guest?.confirmed} />
       <Styled.WarningMessage>
         Lembrando que o portal de confirmação estará disponível até&nbsp;
-        <b>DD/MM/2023</b>.
+        <b>20/02/2023</b>.
       </Styled.WarningMessage>
       {(loading || !guest?.id) && <Loader />}
     </Styled.Wrapper>

@@ -31,8 +31,8 @@ export default async function handler(
     case 'PUT': {
       try {
         const { guest } = body;
-        const newGuest = await updateGuest(id as string, guest);
-        res.status(201).json({ status: 201, error: false, data: newGuest });
+        const updatedGuest = await updateGuest(id as string, guest);
+        res.status(201).json({ status: 201, error: false, data: updatedGuest });
       } catch (e: unknown) {
         const error = e as Error;
         res
