@@ -8,6 +8,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mãe do noivo',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '9G5hbs',
@@ -15,6 +16,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Padrasto do noivo',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'hyTaGH',
@@ -22,6 +24,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmão do noivo',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'l7HLQK',
@@ -29,6 +32,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mãe da Noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'eMoLFp',
@@ -36,6 +40,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Pai da Noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'd0JqKi',
@@ -43,6 +48,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmão da Noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'WCv96l',
@@ -50,6 +56,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Cunhada da Noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'rOT4Qb',
@@ -57,6 +64,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Padastro da Noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'ILAwoj',
@@ -64,6 +72,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Felipe Maia',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'iHfDHp',
@@ -71,6 +80,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmã do Felipe Maia',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '91q6Fs',
@@ -78,6 +88,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Jé',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '3VAPYB',
@@ -85,6 +96,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Juninho',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'PheoKr',
@@ -92,6 +104,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Will (Jingles)',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '5h0J2v',
@@ -99,6 +112,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Sara',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'Xs7dq0',
@@ -106,6 +120,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marido da Dai',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '5yvsg9',
@@ -113,6 +128,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Dai',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'BtEq38',
@@ -120,6 +136,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Rafa',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: '7Syngn',
@@ -127,6 +144,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Ariana do Rafa',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'cN4nXm',
@@ -134,6 +152,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Bruno da Fran',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'YMAuzh',
@@ -141,6 +160,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Fran',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'QO8av7',
@@ -148,6 +168,7 @@ export const guests: Array<IGuest> = [
     internalName: 'do tio Júlio',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'FaCO03',
@@ -155,6 +176,7 @@ export const guests: Array<IGuest> = [
     internalName: 'do Wilto',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   // CONVIDADOS
   {
@@ -163,6 +185,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Vera',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'uyS7m5',
@@ -170,6 +193,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Rodrigo da Tia Vera',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'v7IZDZ',
@@ -177,6 +201,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Rodrigo',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'BecAE5',
@@ -184,6 +209,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha do Rodrigo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5OZria',
@@ -191,6 +217,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Ná da tia Vera',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Ss75lD',
@@ -198,6 +225,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gui da Natália',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'N7jgfZ',
@@ -205,6 +233,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Natália',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'J1t26x',
@@ -212,6 +241,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Natália',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'BBgQ2V',
@@ -219,6 +249,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Lê do Deva',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'vgqZYp',
@@ -226,6 +257,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposa do Lê',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'rGPlq7',
@@ -233,6 +265,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha Lê do Deva',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '68InSY',
@@ -240,6 +273,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho Lê do Deva',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'kkF5ES',
@@ -247,6 +281,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Lena',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'V1UiZV',
@@ -254,6 +289,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Joice da Tia Lena',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'yBScj6',
@@ -261,6 +297,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Alessando Marido da Joice',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Iha0w9',
@@ -268,6 +305,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho da Joice',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'zhxX1j',
@@ -275,6 +313,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorada do Filho da Joice',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'qeAKWw',
@@ -282,6 +321,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Joice',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'KxH8OD',
@@ -289,6 +329,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Diego da Tia Lena',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'K3epz3',
@@ -296,6 +337,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposa Diego da Tia Lena',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '8DVtvK',
@@ -303,6 +345,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Cida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'KfEwQk',
@@ -310,6 +353,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Guará',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'XtBMNX',
@@ -317,6 +361,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Teus',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '0PBXAw',
@@ -324,6 +369,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marina do Teus',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'I0yKnJ',
@@ -331,6 +377,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Lucas da Tia Cida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ztrFiJ',
@@ -338,6 +385,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante Lucas da Tia Cida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'rL6e4R',
@@ -345,6 +393,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gu da Tia Cida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ZZ3XGX',
@@ -352,6 +401,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Elieite do Gu da Tia Cida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '0WL657',
@@ -359,6 +409,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Gu da Tia Cida',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '57ybyo',
@@ -366,6 +417,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha do Gu da Tia Cida',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'XC8TKp',
@@ -373,6 +425,7 @@ export const guests: Array<IGuest> = [
     internalName: 'João da Angélica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'WYzdFi',
@@ -380,6 +433,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Thaís do João da Angélica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'lCnSGw',
@@ -387,6 +441,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Angélica Navarro',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'XefqxV',
@@ -394,6 +449,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorado da Angélica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'nXugMf',
@@ -401,6 +457,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marta da Angélica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '8hMEvE',
@@ -408,6 +465,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Julinho da Angélica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'T3iT5M',
@@ -415,6 +473,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposa do Julinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'UpJRBG',
@@ -422,6 +481,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho(a) do Julinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'r5AoAL',
@@ -429,6 +489,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho(a) do Julinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'jnfyYp',
@@ -436,6 +497,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Luiza do Rafa Rios',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'tCaHhS',
@@ -443,6 +505,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Maria do Rafa Rios',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'pwkOY9',
@@ -450,6 +513,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Igão',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '13vmwB',
@@ -457,6 +521,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tati',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '7Ub255',
@@ -464,6 +529,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Brunão da Tati',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'xkQ6k9',
@@ -471,6 +537,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Ono Xaxá',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Vuwdph',
@@ -478,6 +545,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Shelia do Lucas',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'BjFI1e',
@@ -485,6 +553,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Malu do Lucas',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'MJgmfm',
@@ -492,6 +561,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Alex da Comove',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '2PAp9s',
@@ -499,6 +569,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Alex da Comove',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'qjIjbK',
@@ -506,6 +577,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha do Alex da Comove',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'awJ6Yo',
@@ -513,6 +585,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vanessa do Luis',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'KeZrYW',
@@ -520,6 +593,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Antonino Chiquini',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5rgJT6',
@@ -527,6 +601,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Arthur da Vanessa',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'mywfCc',
@@ -534,6 +609,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Bia da Vanessa',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'eaYF51',
@@ -541,6 +617,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Pai do noivo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'yAKxMd',
@@ -548,6 +625,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Edivânia Garcia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'uwwtko',
@@ -555,6 +633,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Jeffinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '8lHuFl',
@@ -562,6 +641,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filipe Guimarães',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'QFIhhX',
@@ -569,6 +649,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vitinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'EvWFCo',
@@ -576,6 +657,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Anderson do Luís',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'yD30h6',
@@ -583,6 +665,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tainá do Luís',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'IJPIna',
@@ -590,6 +673,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Matheus da C (que não mora mais na C)',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'x95Jmn',
@@ -597,6 +681,7 @@ export const guests: Array<IGuest> = [
     internalName: 'William da farmácia (convidado mãe)',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'mtnk7P',
@@ -604,6 +689,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante William da farmácia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'FSyJJd',
@@ -611,6 +697,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vizinha da mãe do noivo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'iH2vJF',
@@ -618,6 +705,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vizinho da mãe do noivo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'JgDcb9',
@@ -625,6 +713,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marina da Rosângela',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'yPrd9Q',
@@ -632,6 +721,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Cecília da Rosângela',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Op3BSG',
@@ -639,6 +729,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marido da Cecília',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'dXY70L',
@@ -646,6 +737,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorada Felipe Maia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Xyl5kL',
@@ -653,6 +745,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Shell',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'vAYSVB',
@@ -660,6 +753,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Terezinha',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'iobXCZ',
@@ -667,6 +761,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vanderlei da Terezinha',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '2uFd6U',
@@ -674,6 +769,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Guida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'cUiHfT',
@@ -681,6 +777,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Edvaldo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'G3Ng45',
@@ -688,6 +785,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Elen da tia Guida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'WfLzU9',
@@ -695,6 +793,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Érica da tia Guida',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'wHJjJF',
@@ -702,6 +801,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Luiz da Érica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'RCL2EZ',
@@ -709,6 +809,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Luiz da Érica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '4KrfUK',
@@ -716,6 +817,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gabriel da Érica',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'i1r23p',
@@ -723,6 +825,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Augusto da Érica',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'CITc0V',
@@ -730,6 +833,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Léo da Érica',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'AGPSpf',
@@ -737,6 +841,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Padrinho da noiva',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'yoxSD4',
@@ -744,6 +849,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmã da Telma',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'cz9Cbh',
@@ -751,6 +857,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmã da Telma',
     isChild: false,
     confirmed: true,
+    priority: 1,
   },
   {
     id: 'oeawE1',
@@ -758,6 +865,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Nilinho, da tia Liliane',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'qiNRDt',
@@ -765,6 +873,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Liliane, do Tio Nilinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Dop4uv',
@@ -772,6 +881,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Sandrinha',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'tUNENP',
@@ -779,6 +889,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante Sandrinha',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'kKHVrS',
@@ -786,6 +897,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Madrinha da noiva',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'A6BplX',
@@ -793,6 +905,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Marido da Dulce',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'vCdOsZ',
@@ -800,6 +913,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Sasá de Mogi',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'dPbDD1',
@@ -807,6 +921,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmão da Sasá',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'bGpoPB',
@@ -814,6 +929,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Nildo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'nVx05S',
@@ -821,6 +937,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Ruth do Tio Nildo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'q2EGBf',
@@ -828,6 +945,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Tio Nildo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'sl5uYm',
@@ -835,6 +953,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante Filho do Tio Nildo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ouR5a7',
@@ -842,6 +961,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Téia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ngznxP',
@@ -849,6 +969,7 @@ export const guests: Array<IGuest> = [
     internalName: 'filho da Tia Téia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'H7b3Px',
@@ -856,6 +977,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante filho da Tia Téia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'daWrvT',
@@ -863,6 +985,7 @@ export const guests: Array<IGuest> = [
     internalName: 'filho da Tia Téia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'm03Tty',
@@ -870,6 +993,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante filho da Tia Téia',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'wqQCl4',
@@ -877,6 +1001,7 @@ export const guests: Array<IGuest> = [
     internalName: 'filha da Tia Téia',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'WEXcLx',
@@ -884,6 +1009,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Ailton',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Pu1fcl',
@@ -891,6 +1017,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposa do Tio Ailton',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'AXsMBB',
@@ -898,6 +1025,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Tio Ailton',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '0TpGPe',
@@ -905,6 +1033,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Ana',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'bzPyVJ',
@@ -912,6 +1041,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Quissuco',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'MUMAsI',
@@ -919,6 +1049,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho da tia Ana',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '7CkdAu',
@@ -926,6 +1057,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho da tia Ana',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ZV1O9P',
@@ -933,6 +1065,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Tita, do sítio',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'T7fClM',
@@ -940,6 +1073,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposo da Tia Tita',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ovrF6j',
@@ -947,6 +1081,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Tia Tita',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'ZpgJ9E',
@@ -954,6 +1089,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Tia Tita',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'GTCPRF',
@@ -961,6 +1097,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filha da Tia Tita',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'guDk2K',
@@ -968,6 +1105,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Kakau, Filha da Tia Tita',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'RdkZiU',
@@ -975,6 +1113,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tio Adelson',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'y67y43',
@@ -982,6 +1121,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Rafa da Tia Noete',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'antw4Y',
@@ -989,6 +1129,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorada Rafa da Tia Noete',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'HHizmO',
@@ -996,6 +1137,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Noete',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'HS0z8c',
@@ -1003,6 +1145,7 @@ export const guests: Array<IGuest> = [
     internalName: 'da Tia Noete',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '0irffa',
@@ -1010,6 +1153,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Edi da Julia ',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '4SzyHT',
@@ -1017,6 +1161,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Julia da Edi',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '9Ybx5P',
@@ -1024,6 +1169,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorado da Júlia da Edi',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'HDukdi',
@@ -1031,6 +1177,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Julião, Pai do Felipe',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'uOKBtS',
@@ -1038,6 +1185,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia Meire, Mãe do Felipe',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'JfoudJ',
@@ -1045,6 +1193,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Moisa, da Érica',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'kxBBFA',
@@ -1052,6 +1201,7 @@ export const guests: Array<IGuest> = [
     internalName: 'do Moisa',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'B7XoAa',
@@ -1059,6 +1209,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Aline do bombonzinho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'HXEnB0',
@@ -1066,6 +1217,7 @@ export const guests: Array<IGuest> = [
     internalName: 'o bombonzinho',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'DgQ8k0',
@@ -1073,6 +1225,7 @@ export const guests: Array<IGuest> = [
     internalName: 'o irmão do bombonzinho',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'KBy9Rt',
@@ -1080,6 +1233,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Nath, ex do Felipe',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'tp3WDG',
@@ -1087,6 +1241,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Noivo da Nath',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '8hI3gV',
@@ -1094,6 +1249,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Carol do Leon',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'zi9eK2',
@@ -1101,6 +1257,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Ghardenal',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '4T6HbM',
@@ -1108,6 +1265,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Leon da Carol',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'GQVJ47',
@@ -1115,6 +1273,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Carol do Nilo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'lO6YTs',
@@ -1122,6 +1281,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorado da Carol do Nilo',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '82nrHG',
@@ -1129,6 +1289,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho da Carol (Nilo)',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'vWfhmc',
@@ -1136,6 +1297,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Noni',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '8dF6UC',
@@ -1143,6 +1305,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante da Noni',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'N8ugIM',
@@ -1150,6 +1313,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Lorrayne',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'Nh8jBo',
@@ -1157,6 +1321,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Alisson da Lorrayne',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '9HWcV0',
@@ -1164,6 +1329,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Pai da Lorrayne',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5Krc4c',
@@ -1171,6 +1337,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mãe da Lorrayne',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '4J3UX3',
@@ -1178,6 +1345,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Irmã da Lorrayne',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '9SQbvu',
@@ -1185,6 +1353,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorado da Lara',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'RdyYXR',
@@ -1192,6 +1361,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Neide',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'az2f2R',
@@ -1199,6 +1369,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Edu da Neide',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'CGqzLH',
@@ -1206,6 +1377,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mayra da Neide',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'BKwPxs',
@@ -1213,6 +1385,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Caio da Neide',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5WGFr8',
@@ -1220,6 +1393,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Xuxu',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'numcfE',
@@ -1227,6 +1401,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Vera do Dão',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'sKJ0Wh',
@@ -1234,6 +1409,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Acompanhante Vera do Dão',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'bu9iNf',
@@ -1241,6 +1417,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Bruno do Dão',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'lKzqIx',
@@ -1248,6 +1425,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mãe da Jé',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'XOu2WP',
@@ -1255,6 +1433,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Léo da Dai',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'QyQ3eG',
@@ -1262,6 +1441,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Dani da C5',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '569kCu',
@@ -1269,6 +1449,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposo da Dani da C5',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '68tHuA',
@@ -1276,6 +1457,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Lê do escritório',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'c83TTq',
@@ -1283,6 +1465,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gabi do escritório',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5ynCLe',
@@ -1290,6 +1473,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mafer do escritório',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'FMMAB9',
@@ -1297,6 +1481,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gabi da Faculdade',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'O8kHri',
@@ -1304,6 +1489,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Gabi da Faculdade',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'QJAUzy',
@@ -1311,6 +1497,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Duda da Faculdade',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'rIdNr5',
@@ -1318,6 +1505,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Duda da Faculdade',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '08l9iY',
@@ -1325,6 +1513,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Celina de SP',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '3yQNso',
@@ -1332,6 +1521,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Terninho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'gf1e5n',
@@ -1339,6 +1529,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Esposa do Terninho',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'OP1uUm',
@@ -1346,6 +1537,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Filho do Terninho',
     isChild: true,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5pqk9j',
@@ -1353,6 +1545,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Namorada do Deusdete',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: 'aB2y3w',
@@ -1360,6 +1553,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Mãe do Will',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
   {
     id: '5PV32t',
@@ -1367,6 +1561,7 @@ export const guests: Array<IGuest> = [
     internalName: 'Tia do Will',
     isChild: false,
     confirmed: false,
+    priority: 1,
   },
 ];
 
