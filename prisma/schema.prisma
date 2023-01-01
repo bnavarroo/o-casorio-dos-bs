@@ -19,7 +19,8 @@ model Guest {
   internalName  String @db.VarChar(50) @default("")
   isChild  Boolean @default(false)
   confirmed Boolean @default(false)
-  updatedAt DateTime @default("2022-10-15T11:30:00+02:00")
+  updatedAt DateTime @default("2023-01-01T18:00:00+00:00")
+  priority Int @default(1)
 }
 
 model User {

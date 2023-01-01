@@ -6,6 +6,7 @@ interface IGuestBase {
   internalName: string;
   isChild: boolean;
   confirmed: boolean;
+  priority: number;
 }
 export interface IGuestModel extends IGuestBase {
   updatedAt?: Date;

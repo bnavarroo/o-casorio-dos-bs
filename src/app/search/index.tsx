@@ -1,5 +1,6 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import Router from 'next/router';
+import { EVENT_CONFIG } from '@config/event';
 import { useGuest } from '@utilities/hooks/use-guest';
 import { ErrorBox } from '@shared/components/error-box';
 import { Loader } from '@shared/components/loader';
@@ -40,12 +41,20 @@ const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
           <SearchIcon />
         </button>
       </InputWrapperButton>
-      <em>* o código de confirmação foi encaminhado junto com o convite.</em>
       {error && (
         <Styled.ErrorWrapper>
           <ErrorBox title={errorTitle} msg={errorMessage} />
         </Styled.ErrorWrapper>
       )}
+      <Styled.InformationBox>
+        <b className="title">Informações importantes:</b>
+        <p className="content">
+          - O código de confirmação foi encaminhado junto com o convite;
+        </p>
+        <p className="content">
+          - A data limite para confirmação é {EVENT_CONFIG.confirmLimitDate}.
+        </p>
+      </Styled.InformationBox>
       {(loading || guest?.id) && <Loader />}
     </Styled.Form>
   );

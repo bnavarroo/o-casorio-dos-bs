@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Guest` ADD COLUMN `priority` INTEGER NOT NULL DEFAULT 1;

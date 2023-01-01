@@ -1,14 +1,20 @@
 import { EVENT_CONFIG } from '@config/event';
 
-const { address, fullDate, localName, supportAppPhoneLink } = EVENT_CONFIG;
+const { address, fullDate, localName, supportAppPhoneLink, confirmLimitDate } =
+  EVENT_CONFIG;
 
 export const qna = [
   {
     id: 'q_1',
     question: 'Como confirmar minha presença?',
     answer: `Cada convidado receberá um código de confirmação junto com o convite e
-    a confirmação será realizada nesse mesmo site (<a href='/' target='_blank'>clique aqui para acessar</a>).
+    a confirmação será realizada nesse mesmo site (<a href='/search' target='_blank'>clique aqui para acessar</a>).
     Para confirmar você precisa inserir o código no campo, fazer a busca através da lupa e na tela seguinte clicar no botão "Confirmar Presença".`,
+  },
+  {
+    id: 'q_10',
+    question: 'Até quando posso confirmar minha presença?',
+    answer: `A confirmação deve ser feita até o dia ${confirmLimitDate}.`,
   },
   {
     id: 'q_2',

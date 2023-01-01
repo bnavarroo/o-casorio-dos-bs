@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { FlexWrapper, FlexCentralized } from '@styles/ui/flex';
+import { FlexCentralized } from '@styles/ui/flex';
 
 export const Showing = styled(FlexCentralized)`
   margin-bottom: 10px;
@@ -7,10 +7,6 @@ export const Showing = styled(FlexCentralized)`
   i {
     font-style: italic;
   }
-`;
-
-export const ShowingLeftData = styled(FlexWrapper)`
-  gap: 10px;
 `;
 
 export const Table = styled.table`

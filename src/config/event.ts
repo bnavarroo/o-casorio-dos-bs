@@ -10,4 +10,5 @@ export const EVENT_CONFIG = {
     { key: '16991814840', name: 'Bruno Navarro de Oliveira' },
     { key: '16993463140', name: 'Bruna Costa da Silva' },
   ],
+  confirmLimitDate: '20/02/2023',
 };

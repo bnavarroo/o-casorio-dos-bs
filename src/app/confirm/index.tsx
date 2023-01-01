@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { EVENT_CONFIG } from '@config/event';
 import { useGuest } from '@utilities/hooks/use-guest';
 import { Loader } from '@shared/components/loader';
 import { IGuestProps } from '@shared/types/guest';
@@ -32,7 +33,7 @@ const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
       <Buttons id={guest?.id as string} confirmed={!!guest?.confirmed} />
       <Styled.WarningMessage>
         Lembrando que o portal de confirmação estará disponível até&nbsp;
-        <b>20/02/2023</b>.
+        <b>{EVENT_CONFIG.confirmLimitDate}</b>.
       </Styled.WarningMessage>
       {(loading || !guest?.id) && <Loader />}
     </Styled.Wrapper>
