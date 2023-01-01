@@ -35,7 +35,7 @@ export const getGuest = async (id: string) => {
   return fmtGuestReturned(guest);
 };
 
-export const createGuest = async (guest: IGuestModel) => {
+export const createGuest = async (guest: IGuest) => {
   const newGuest: IGuestModel | null = await client.guest.create({
     data: {
       ...guest,

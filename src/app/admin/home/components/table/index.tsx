@@ -2,23 +2,9 @@ import { IProps } from './types';
 import { tableHeader } from './helpers';
 import * as Styled from './styles';
 
-const TableGuest: React.FC<IProps> = ({
-  data,
-  totalItems,
-  totalConfirmed,
-  totalChild,
-}) => (
+const TableGuest: React.FC<IProps> = ({ data, totalItems }) => (
   <>
     <Styled.Showing>
-      <Styled.ShowingLeftData>
-        <span>
-          <b>Confirmados</b>: {totalConfirmed}
-        </span>
-        <span>
-          <b>Crianças</b>: {totalChild}
-        </span>
-      </Styled.ShowingLeftData>
-      <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
       <i>
         Exibindo {data?.length} de {totalItems}
       </i>

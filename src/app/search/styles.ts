@@ -18,16 +18,27 @@ export const Form = styled(FlexCentralized).attrs({ $direction: 'column' })`
   label {
     margin-bottom: 12px;
   }
-
-  em {
-    font-size: 13px;
-    line-height: 18px;
-    padding: 8px 0px;
-  }
 `;
 
 export const ErrorWrapper = styled.div`
   margin-top: 20px;
   font-size: 20px;
   max-width: 500px;
+`;
+
+export const InformationBox = styled.div`
+  margin-top: 10%;
+  border: 1px dotted;
+  padding: 20px;
+  font-size: 22px;
+
+  .title {
+    display: block;
+  }
+
+  .content {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 10px;
+  }
 `;

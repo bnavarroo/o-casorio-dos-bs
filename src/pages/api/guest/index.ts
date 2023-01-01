@@ -18,7 +18,15 @@ export default async function handler(
     }
     case 'POST': {
       try {
-        const { guest } = body;
+        const { id, name, internalName, isChild, confirmed, priority } = body;
+        const guest: IGuest = {
+          id,
+          name,
+          internalName,
+          isChild,
+          confirmed,
+          priority,
+        };
         const newGuest = await createGuest(guest);
         res.status(200).json({ status: 200, error: false, data: newGuest });
       } catch (e: unknown) {
