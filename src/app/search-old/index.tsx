@@ -1,36 +1,39 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
+import Router from 'next/router';
 import { EVENT_CONFIG } from '@config/event';
-import { withLoader } from '@utilities/hoc/with-loader';
-import { IInjectedProps } from '@utilities/hoc/with-loader/types';
+import { useGuest } from '@utilities/hooks/use-guest';
 import { ErrorBox } from '@shared/components/error-box';
-import { IGuestProps } from '@shared/types/guest';
+import { Loader } from '@shared/components/loader';
 import { Input, InputWrapperButton } from '@styles/ui/input';
 import SearchIcon from '@assets/img/search-icon.svg';
+import { IGuestProps } from '@shared/types/guest';
 import { handleSubmit } from './helpers';
 import * as Styled from './styles';
 
-const Search: React.FC<IGuestProps & IInjectedProps> = ({
-  id: idFromProps,
-  persistedGuest,
-  setLoading,
-}) => {
-  const [notFound, setNotFound] = useState<boolean>(
-    !!(idFromProps && !persistedGuest)
+const Search: React.FC<IGuestProps> = ({ id: qsId = '', persistedGuest }) => {
+  const [id, setId] = useState<string>(qsId as string);
+  const { guest, error, errorTitle, errorMessage, loading } = useGuest(
+    id,
+    persistedGuest
   );
+
+  useEffect(() => {
+    if (guest?.id) {
+      Router.push(`/confirm/${guest.id}`);
+    }
+  }, [guest]);
 
   return (
     <Styled.Form
       as="form"
-      onSubmit={(e: ChangeEvent<HTMLFormElement>) =>
-        handleSubmit(e, setLoading, setNotFound)
-      }
+      onSubmit={(e: ChangeEvent<HTMLFormElement>) => handleSubmit(e, setId)}
     >
       <label htmlFor="guestId">Informe o código de confirmação</label>
       <InputWrapperButton $width="500px">
         <Input
           type="text"
           name="guestId"
-          defaultValue={idFromProps}
+          defaultValue={qsId}
           id="guestId"
           $borderColor="transparent"
         />
@@ -38,12 +41,9 @@ const Search: React.FC<IGuestProps & IInjectedProps> = ({
           <SearchIcon />
         </button>
       </InputWrapperButton>
-      {notFound && (
+      {error && (
         <Styled.ErrorWrapper>
-          <ErrorBox
-            title="Código não encontrado"
-            msg="Verifique o código informado e tente novamente. Para dúvidas e mais informações acesse o link 'dúvidas e ajuda', localizado no canto superior direito da tela."
-          />
+          <ErrorBox title={errorTitle} msg={errorMessage} />
         </Styled.ErrorWrapper>
       )}
       <Styled.InformationBox>
@@ -55,8 +55,9 @@ const Search: React.FC<IGuestProps & IInjectedProps> = ({
           - A data limite para confirmação é {EVENT_CONFIG.confirmLimitDate}.
         </p>
       </Styled.InformationBox>
+      {(loading || guest?.id) && <Loader />}
     </Styled.Form>
   );
 };
 
-export default withLoader(Search);
+export default Search;
