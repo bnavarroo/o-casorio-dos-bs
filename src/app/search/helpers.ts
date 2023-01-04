@@ -1,42 +1,33 @@
+import Router from 'next/router';
 import { ChangeEvent } from 'react';
-import { getGuestFromCookies } from '@utilities/guest';
-import { TNextCtx, IRedirect, TSetState } from '@shared/types/_globals';
-import { TGuestFromServer } from '@shared/types/guest';
+import { getEndpoint } from '@config/api';
+import { executeHttpRequest } from '@utilities/http';
+import { TSetState } from '@shared/types/_globals';
+import { IGuest } from '@shared/types/guest';
 
-export const getSSRProps = (
-  ctx?: TNextCtx
-): IRedirect<TGuestFromServer> | { props: TGuestFromServer } => {
-  const persistedGuest = getGuestFromCookies(ctx);
-  const { id } = persistedGuest ?? {};
-  const qs = ctx?.query ?? {};
-  const { id: qsId } = qs;
-
-  if (id) {
-    return {
-      redirect: {
-        permanent: false,
-        destination: `/confirm/${id}`,
-      },
-    };
-  }
-
-  return {
-    props: {
-      serverProps: {
-        persistedGuest,
-        id: (qsId as string) ?? '',
-      },
-    },
-  };
-};
-
-export const handleSubmit = (
+export const handleSubmit = async (
   e: ChangeEvent<HTMLFormElement>,
-  setState: TSetState<string>
+  setLoading: TSetState<boolean>,
+  setNotFound: TSetState<boolean>
 ) => {
   e.preventDefault();
 
   const formEntries = Object.fromEntries(new FormData(e?.target));
   const { guestId } = formEntries;
-  setState(guestId as string);
+  if (guestId) {
+    setLoading(true);
+    const url = getEndpoint('guest', [guestId as string]);
+    const response = await executeHttpRequest<IGuest>({
+      url,
+      method: 'get',
+    });
+    if (!response?.error) {
+      Router.push(`/confirm/${guestId}`);
+    } else {
+      setLoading(false);
+      setNotFound(true);
+    }
+  } else {
+    setNotFound(true);
+  }
 };
