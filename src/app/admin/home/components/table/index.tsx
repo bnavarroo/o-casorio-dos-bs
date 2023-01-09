@@ -1,5 +1,6 @@
+import { Button } from '@styles/ui/button';
 import { IProps } from './types';
-import { tableHeader } from './helpers';
+import { tableHeader, handleEditGuest } from './helpers';
 import * as Styled from './styles';
 
 const TableGuest: React.FC<IProps> = ({ data, totalItems }) => (
@@ -28,6 +29,16 @@ const TableGuest: React.FC<IProps> = ({ data, totalItems }) => (
             <td>{guest?.isChild ? 'Sim' : 'Não'}</td>
             <td>{guest?.confirmed ? 'Sim' : 'Não'}</td>
             <td>{guest?.updatedAt}</td>
+            <td>
+              <Button
+                type="button"
+                onClick={handleEditGuest(guest)}
+                $type="link"
+                $specialFont={false}
+              >
+                Editar
+              </Button>
+            </td>
           </tr>
         ))}
       </tbody>

@@ -1,4 +1,5 @@
 export interface IProps {
-  $type?: 'confirm' | 'cancel';
+  $type?: 'confirm' | 'cancel' | 'link';
   $padding?: string;
+  $specialFont?: boolean;
 }

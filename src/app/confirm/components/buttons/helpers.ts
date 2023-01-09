@@ -6,18 +6,9 @@ import { EVENT_CONFIG } from '@config/event';
 import { getEndpoint } from '@config/api';
 import { executeHttpRequest } from '@utilities/http';
 import { getGuestFromCookies } from '@utilities/guest';
+import { randomString } from '@utilities/string';
 import { TSetState } from '@shared/types/_globals';
 import { IGuest } from '@shared/types/guest';
-
-const randomString = (size = 8) => {
-  let result = '';
-  const c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  for (let i = 0; i < size; i += 1) {
-    result += c.charAt(Math.floor(Math.random() * c.length));
-  }
-
-  return result;
-};
 
 export const errorData = {
   title: 'Ops, algo de errado não está certo...',
@@ -37,9 +28,7 @@ export const handleClickButton =
     const guestFromCookies = getGuestFromCookies(null);
     const newGuest = { ...guestFromCookies, confirmed: value };
     const url = getEndpoint('guest', [id]);
-    const body = {
-      guest: newGuest,
-    };
+    const body = { ...newGuest };
 
     const response = await executeHttpRequest<IGuest>({
       url,

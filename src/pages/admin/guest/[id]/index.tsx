@@ -1,30 +1,18 @@
-import type { NextPage } from 'next';
-// import type { GetServerSideProps } from 'next';
-// import { getGuestFromCookies } from '@utilities/guest';
-// import { TGuestFromServer } from '@shared/types/guest';
+import type { NextPage, GetServerSideProps } from 'next';
+import { TGuestFromServer } from '@shared/types/guest';
 import MainTemplate from '@templates/main';
 import AdmGuest from '@app/admin/guest';
+import { getSSRProps } from '@app/admin/guest/helpers-ssr';
 
-const AdmGuestPage: NextPage = () => (
+const AdmGuestPage: NextPage<TGuestFromServer> = ({ serverProps }) => (
   <MainTemplate>
-    <AdmGuest />
+    <AdmGuest persistedGuest={serverProps?.persistedGuest} />
   </MainTemplate>
 );
 
 export default AdmGuestPage;
 
-/*
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const persistedGuest = getGuestFromCookies(ctx);
-  const id = ctx?.params?.id;
-
-  return {
-    props: {
-      serverProps: {
-        persistedGuest,
-        id,
-      },
-    },
-  };
+  const result = await getSSRProps(ctx);
+  return result;
 };
-*/

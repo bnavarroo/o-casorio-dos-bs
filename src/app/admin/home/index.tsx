@@ -14,7 +14,9 @@ const AdmHome: React.FC<IProps> = ({ guestList }) => {
       <HomeDashboard guestList={guestList} />
       <Styled.FilterWrapper>
         <FilterGuest data={guestList} setFilteredList={setFilteredList} />
-        <Styled.NewButton>Inserir Novo Convidado</Styled.NewButton>
+        <Styled.NewButton as="a" href="/admin/guest/new">
+          Inserir Novo Convidado
+        </Styled.NewButton>
       </Styled.FilterWrapper>
       <TableGuest data={filteredList} totalItems={guestList?.length} />
     </>

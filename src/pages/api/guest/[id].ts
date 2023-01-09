@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { IHttpResponse } from '@utilities/http/types';
 import { getGuest, updateGuest } from '@utilities/client/guest';
-import { IGuest } from '@shared/types/guest';
+import { IGuest, IGuestModel } from '@shared/types/guest';
 
 export default async function handler(
   req: NextApiRequest,
@@ -30,7 +30,15 @@ export default async function handler(
     }
     case 'PUT': {
       try {
-        const { guest } = body;
+        const { name, internalName, isChild, confirmed, priority } = body;
+        const guest: IGuestModel = {
+          id: id as string,
+          name,
+          internalName,
+          isChild,
+          confirmed,
+          priority,
+        };
         const updatedGuest = await updateGuest(id as string, guest);
         res.status(201).json({ status: 201, error: false, data: updatedGuest });
       } catch (e: unknown) {
