@@ -30,6 +30,11 @@ export const tableHeader = [
     className: '',
   },
   {
+    field: 'priority',
+    description: 'Prioridade',
+    className: '',
+  },
+  {
     field: 'updatedAt',
     description: 'Atualizado em',
     className: '',

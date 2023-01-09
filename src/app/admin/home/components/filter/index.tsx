@@ -1,16 +1,13 @@
 import { useState, ChangeEvent } from 'react';
 import { Input, InputWrapperButton } from '@styles/ui/input';
 import SearchIcon from '@assets/img/search-icon.svg';
-import { IProps } from './types';
-import {
-  handleFilterBySearch,
-  handleFilterByConfirmed,
-  fmtShowValue,
-} from './helpers';
+import { IProps, TStateFilter } from './types';
+import { handleFilter, stringToBoolean } from './helpers';
 import * as Styled from './styles';
 
 const FilterGuest: React.FC<IProps> = ({ data, setFilteredList }) => {
   const [confirmedFilter, setConfirmedFilter] = useState<boolean | undefined>();
+  const [priorityFilter, setPriorityFilter] = useState<number>();
   const [searchFilter, setSearchFilter] = useState<string>('');
 
   return (
@@ -18,11 +15,13 @@ const FilterGuest: React.FC<IProps> = ({ data, setFilteredList }) => {
       <Styled.Form
         as="form"
         onSubmit={(e: ChangeEvent<HTMLFormElement>) =>
-          handleFilterBySearch(e, {
+          handleFilter(e, {
             data,
             confirmedFilter,
+            priorityFilter,
+            type: 'search',
             setFilteredList,
-            setSearchFilter,
+            setStateCurrentFilter: setSearchFilter as TStateFilter,
           })
         }
       >
@@ -39,26 +38,52 @@ const FilterGuest: React.FC<IProps> = ({ data, setFilteredList }) => {
           </button>
         </InputWrapperButton>
       </Styled.Form>
-      <Styled.ShowWrapper>
-        <p>Visualizar:</p>
-        <select
-          name="show"
-          id="show"
-          onChange={(e: ChangeEvent<HTMLSelectElement>) =>
-            handleFilterByConfirmed({
-              data,
-              confirmedFilter: fmtShowValue(e?.target?.value),
-              searchFilter,
-              setFilteredList,
-              setConfirmedFilter,
-            })
-          }
-        >
-          <option value="undefined">Todos</option>
-          <option value="true">Somente confirmados</option>
-          <option value="false">Somente não confirmados</option>
-        </select>
-      </Styled.ShowWrapper>
+      <Styled.SelectsWrapper>
+        <div>
+          <p>Visualizar:</p>
+          <select
+            name="show"
+            id="show"
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              handleFilter(e, {
+                data,
+                searchFilter,
+                confirmedFilter: stringToBoolean(e?.target?.value),
+                priorityFilter,
+                type: 'confirm',
+                setFilteredList,
+                setStateCurrentFilter: setConfirmedFilter as TStateFilter,
+              })
+            }
+          >
+            <option value="undefined">Todos</option>
+            <option value="true">Somente confirmados</option>
+            <option value="false">Somente não confirmados</option>
+          </select>
+        </div>
+        <div>
+          <p>Prioridade:</p>
+          <select
+            name="priority"
+            id="priority"
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+              handleFilter(e, {
+                data,
+                searchFilter,
+                confirmedFilter,
+                priorityFilter: parseInt(e?.target?.value, 10),
+                type: 'priority',
+                setFilteredList,
+                setStateCurrentFilter: setPriorityFilter as TStateFilter,
+              })
+            }
+          >
+            <option value="0">Todos</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </Styled.SelectsWrapper>
     </>
   );
 };
