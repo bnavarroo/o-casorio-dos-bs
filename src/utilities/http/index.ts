@@ -1,7 +1,7 @@
 import { TStringMap } from '@shared/types/_globals';
 import { IHttpRequestParams, IHttpResponseFetch } from './types';
 
-const parseObjectToQs = (object: TStringMap = {}): string => {
+export const parseObjectToQs = (object: TStringMap = {}): string => {
   let params = '';
   Object.keys(object).forEach((key) => {
     params +=

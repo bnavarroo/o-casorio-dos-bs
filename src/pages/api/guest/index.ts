@@ -2,6 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { IHttpResponse } from '@utilities/http/types';
 import { getGuestList, createGuest } from '@utilities/client/guest';
+import { randomString } from '@utilities/string';
 import { IGuest } from '@shared/types/guest';
 
 export default async function handler(
@@ -19,8 +20,9 @@ export default async function handler(
     case 'POST': {
       try {
         const { id, name, internalName, isChild, confirmed, priority } = body;
+        const formattedId = id || randomString(6);
         const guest: IGuest = {
-          id,
+          id: formattedId,
           name,
           internalName,
           isChild,

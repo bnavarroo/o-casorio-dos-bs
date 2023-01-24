@@ -1,41 +1,48 @@
 /* eslint-disable indent */
 import { ChangeEvent } from 'react';
-import {
-  IFilterProps,
-  IHandleFilterBySearchProps,
-  IHandleFilterByConfirmedProps,
-} from './types';
+import { IBaseFilter, ICurrentFilter, IFilter } from './types';
 
 const getFilteredList = ({
-  searchFilter,
   data,
+  searchFilter,
   confirmedFilter,
-}: IFilterProps) => {
-  const filteredList = data?.filter(({ id, name, internalName, confirmed }) => {
-    let condition = true;
-    if (searchFilter) {
-      condition =
-        id?.toLowerCase()?.includes(searchFilter) ||
-        name?.toLowerCase()?.includes(searchFilter) ||
-        internalName?.toLowerCase()?.includes(searchFilter);
-    }
+  priorityFilter,
+}: IBaseFilter) => {
+  const filteredList = data?.filter(
+    ({ id, name, internalName, confirmed, priority }) => {
+      let condition = true;
 
-    return confirmedFilter === true || confirmedFilter === false
-      ? condition && confirmed === confirmedFilter
-      : condition;
-  });
+      if (searchFilter) {
+        condition =
+          id?.toLowerCase()?.includes(searchFilter) ||
+          name?.toLowerCase()?.includes(searchFilter) ||
+          internalName?.toLowerCase()?.includes(searchFilter);
+      }
+
+      if (confirmedFilter === true || confirmedFilter === false) {
+        condition = condition && confirmed === confirmedFilter;
+      }
+
+      if (priorityFilter && priorityFilter > 0) {
+        condition = condition && priority === priorityFilter;
+      }
+
+      return condition;
+    }
+  );
 
   return filteredList;
 };
 
-export const handleFilterBySearch = (
+const handleFilterBySearch = (
   e: ChangeEvent<HTMLFormElement>,
   {
     data,
     confirmedFilter,
+    priorityFilter,
     setFilteredList,
-    setSearchFilter,
-  }: IHandleFilterBySearchProps
+    setStateCurrentFilter,
+  }: ICurrentFilter
 ) => {
   e?.preventDefault();
 
@@ -44,33 +51,76 @@ export const handleFilterBySearch = (
   const formattedKey = filterGuest?.toString()?.toLowerCase();
 
   const filteredList = getFilteredList({
+    data,
     searchFilter: formattedKey,
-    data,
     confirmedFilter,
+    priorityFilter,
   });
 
-  setSearchFilter(formattedKey ?? '');
+  setStateCurrentFilter(formattedKey ?? '');
   setFilteredList(filteredList);
 };
 
-export const handleFilterByConfirmed = ({
+const handleFilterBySelect = ({
   data,
-  confirmedFilter,
   searchFilter,
+  confirmedFilter,
+  priorityFilter,
+  type,
   setFilteredList,
-  setConfirmedFilter,
-}: IHandleFilterByConfirmedProps) => {
+  setStateCurrentFilter,
+}: IFilter) => {
   const filteredList = getFilteredList({
-    searchFilter,
     data,
+    searchFilter,
     confirmedFilter,
+    priorityFilter,
   });
 
-  setConfirmedFilter(confirmedFilter);
+  const currentFilter = type === 'confirm' ? confirmedFilter : priorityFilter;
+
+  setStateCurrentFilter(currentFilter);
   setFilteredList(filteredList);
 };
 
-export const fmtShowValue = (s: string) => {
+export const handleFilter = (
+  e: ChangeEvent<HTMLFormElement> | ChangeEvent<HTMLSelectElement> | undefined,
+  {
+    data,
+    searchFilter,
+    confirmedFilter,
+    priorityFilter,
+    type,
+    setFilteredList,
+    setStateCurrentFilter,
+  }: IFilter
+) => {
+  switch (type) {
+    case 'search':
+      return handleFilterBySearch(e as ChangeEvent<HTMLFormElement>, {
+        data,
+        confirmedFilter,
+        priorityFilter,
+        setFilteredList,
+        setStateCurrentFilter,
+      });
+    case 'confirm':
+    case 'priority':
+      return handleFilterBySelect({
+        data,
+        searchFilter,
+        confirmedFilter,
+        priorityFilter,
+        type,
+        setFilteredList,
+        setStateCurrentFilter,
+      });
+    default:
+      return data;
+  }
+};
+
+export const stringToBoolean = (s: string) => {
   if (s === 'undefined') {
     return undefined;
   }

@@ -48,6 +48,12 @@ export const Table = styled.table`
             padding: 5px 10px 5px 50%;
             line-height: 18px;
 
+            &.centralized {
+              display: flex;
+              justify-content: center;
+              padding: 5px 10px 5px 0;
+            }
+
             &:before {
               position: absolute;
               top: 0;
@@ -63,8 +69,12 @@ export const Table = styled.table`
             &:nth-of-type(1):before {
               padding-top: 20px;
             }
-            &:nth-of-type(6),
-            &:nth-of-type(6):before {
+            &:nth-of-type(7),
+            &:nth-of-type(7):before {
+              padding-bottom: 10px;
+            }
+            &:nth-of-type(8),
+            &:nth-of-type(8):before {
               padding-bottom: 20px;
             }
 
@@ -84,6 +94,9 @@ export const Table = styled.table`
               content: 'Confirmado:';
             }
             &:nth-of-type(6):before {
+              content: 'Prioridade:';
+            }
+            &:nth-of-type(7):before {
               content: 'Atualizado em:';
             }
           }

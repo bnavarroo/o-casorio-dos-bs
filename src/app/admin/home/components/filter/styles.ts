@@ -16,9 +16,10 @@ export const Form = styled(FlexCentralized).attrs({ $direction: 'column' })`
   }
 `;
 
-export const ShowWrapper = styled.div`
+export const SelectsWrapper = styled(FlexCentralized)`
   ${({ theme }) => css`
     text-align: center;
+    gap: 10px;
     @media (min-width: ${theme.breakpoints.desktopSmall.min}) {
       margin-left: auto;
       text-align: left;
