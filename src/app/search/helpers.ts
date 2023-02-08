@@ -16,7 +16,7 @@ export const handleSubmit = async (
   const { guestId } = formEntries;
   if (guestId) {
     setLoading(true);
-    const url = getEndpoint('guest', [guestId as string]);
+    const url = getEndpoint('guest', [(guestId as string)?.trim()]);
     const response = await executeHttpRequest<IGuest>({
       url,
       method: 'get',
