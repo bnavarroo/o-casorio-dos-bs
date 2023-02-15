@@ -25,10 +25,11 @@ export const getGuestList = async () => {
   return formattedGuests as Array<IGuest>;
 };
 
-export const getGuest = async (id: string) => {
-  const guest: IGuestModel | null = await client.guest.findUnique({
+export const getGuest = async (id: string, priority?: number | null) => {
+  const guest: IGuestModel | null = await client.guest.findFirst({
     where: {
       id,
+      ...(!!priority && { priority }),
     },
   });
 
