@@ -16,13 +16,14 @@ export const handleSubmit = async (
   const { guestId } = formEntries;
   if (guestId) {
     setLoading(true);
-    const url = getEndpoint('guest', [(guestId as string)?.trim()]);
+    const id = (guestId as string)?.trim();
+    const url = getEndpoint('guest', [id]);
     const response = await executeHttpRequest<IGuest>({
-      url,
+      url: `${url}?priority=1`,
       method: 'get',
     });
     if (!response?.error) {
-      Router.push(`/confirm/${guestId}`);
+      Router.push(`/confirm/${id}`);
     } else {
       setLoading(false);
       setNotFound(true);

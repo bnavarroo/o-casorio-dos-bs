@@ -9,14 +9,17 @@ export default async function handler(
   res: NextApiResponse<IHttpResponse<IGuest>>
 ) {
   const {
-    query: { id },
+    query: { id, priority: qsPriority },
     body,
     method,
   } = req;
 
   switch (method) {
     case 'GET': {
-      const guest = await getGuest(id as string);
+      const priorityFilter = qsPriority
+        ? parseInt(qsPriority as string, 10)
+        : null;
+      const guest = await getGuest(id as string, priorityFilter);
       if (!guest) {
         res.status(404).json({
           status: 404,
