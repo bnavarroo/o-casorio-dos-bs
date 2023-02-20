@@ -21,6 +21,8 @@ model Guest {
   confirmed Boolean @default(false)
   updatedAt DateTime @default("2023-01-01T18:00:00+00:00")
   priority Int @default(1)
+  age Int?
+  isActive Boolean @default(true)
 }
 
 model User {

@@ -10,8 +10,16 @@ const AdmGuest: React.FC<IPersistedGuest & IInjectedProps> = ({
   persistedGuest,
   setLoading,
 }) => {
-  const { id, name, internalName, isChild, confirmed, priority } =
-    persistedGuest ?? {};
+  const {
+    id,
+    name,
+    internalName,
+    isChild,
+    confirmed,
+    priority,
+    age,
+    isActive = true,
+  } = persistedGuest ?? {};
   return (
     <Styled.Form
       as="form"
@@ -22,10 +30,32 @@ const AdmGuest: React.FC<IPersistedGuest & IInjectedProps> = ({
       <Styled.FormTitle>
         {persistedGuest ? 'Editar' : 'Novo'} Convidado
       </Styled.FormTitle>
-      <Styled.FormLine $cols={2}>
+      <Styled.FormLine $cols={3}>
         <Styled.FormCol>
           <label htmlFor="id">Id</label>
           <Input type="text" name="id" defaultValue={id} id="id" />
+        </Styled.FormCol>
+        <Styled.FormCol>
+          <label htmlFor="isActive">Ativo?</label>
+          <select
+            name="isActive"
+            id="isActive"
+            defaultValue={isActive ? 'true' : 'false'}
+          >
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </Styled.FormCol>
+        <Styled.FormCol>
+          <label htmlFor="confirmed">Está confirmado?</label>
+          <select
+            name="confirmed"
+            id="confirmed"
+            defaultValue={confirmed ? 'true' : 'false'}
+          >
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
         </Styled.FormCol>
       </Styled.FormLine>
       <Styled.FormLine $cols={2}>
@@ -45,6 +75,17 @@ const AdmGuest: React.FC<IPersistedGuest & IInjectedProps> = ({
       </Styled.FormLine>
       <Styled.FormLine $cols={3}>
         <Styled.FormCol>
+          <label htmlFor="confirmed">Prioridade</label>
+          <select
+            name="priority"
+            id="priority"
+            defaultValue={priority === 1 ? '1' : '2'}
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </Styled.FormCol>
+        <Styled.FormCol>
           <label htmlFor="isChild">É Criança?</label>
           <select
             name="isChild"
@@ -56,26 +97,8 @@ const AdmGuest: React.FC<IPersistedGuest & IInjectedProps> = ({
           </select>
         </Styled.FormCol>
         <Styled.FormCol>
-          <label htmlFor="confirmed">Está confirmado?</label>
-          <select
-            name="confirmed"
-            id="confirmed"
-            defaultValue={confirmed ? 'true' : 'false'}
-          >
-            <option value="true">Sim</option>
-            <option value="false">Não</option>
-          </select>
-        </Styled.FormCol>
-        <Styled.FormCol>
-          <label htmlFor="confirmed">Prioridade</label>
-          <select
-            name="priority"
-            id="priority"
-            defaultValue={priority === 1 ? '1' : '2'}
-          >
-            <option value="1">1</option>
-            <option value="2">2</option>
-          </select>
+          <label htmlFor="age">Idade</label>
+          <Input type="number" name="age" id="age" defaultValue={age ?? ''} />
         </Styled.FormCol>
       </Styled.FormLine>
       <Styled.FormButton type="submit" $type="confirm" $specialFont={false}>

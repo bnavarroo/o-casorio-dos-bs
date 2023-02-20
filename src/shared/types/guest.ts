@@ -7,7 +7,10 @@ interface IGuestBase {
   isChild: boolean;
   confirmed: boolean;
   priority: number;
+  age: number | null;
+  isActive: boolean;
 }
+
 export interface IGuestModel extends IGuestBase {
   updatedAt?: Date;
 }

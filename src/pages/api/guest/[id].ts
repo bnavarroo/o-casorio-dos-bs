@@ -33,7 +33,15 @@ export default async function handler(
     }
     case 'PUT': {
       try {
-        const { name, internalName, isChild, confirmed, priority } = body;
+        const {
+          name,
+          internalName,
+          isChild,
+          confirmed,
+          priority,
+          age,
+          isActive,
+        } = body;
         const guest: IGuestModel = {
           id: id as string,
           name,
@@ -41,6 +49,8 @@ export default async function handler(
           isChild,
           confirmed,
           priority,
+          age,
+          isActive,
         };
         const updatedGuest = await updateGuest(id as string, guest);
         res.status(201).json({ status: 201, error: false, data: updatedGuest });

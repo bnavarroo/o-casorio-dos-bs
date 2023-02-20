@@ -15,7 +15,7 @@ const Confirm: React.FC<IGuestProps> = ({ id, persistedGuest }) => {
 
   useEffect(() => {
     if (error) {
-      const redirectTo = id ? `/?id=${id}` : '/';
+      const redirectTo = id ? `/search?id=${id}` : '/search';
       guestLogout(redirectTo);
     }
   }, [error, id]);

@@ -14,7 +14,16 @@ export const handleSubmit = async (
   setLoading(true);
 
   const formEntries = Object.fromEntries(new FormData(e?.target));
-  const { id, name, internalName, isChild, confirmed, priority } = formEntries;
+  const {
+    id,
+    name,
+    internalName,
+    isChild,
+    confirmed,
+    priority,
+    age,
+    isActive,
+  } = formEntries;
   const data: IGuest = {
     id: id as string,
     name: name as string,
@@ -22,6 +31,8 @@ export const handleSubmit = async (
     isChild: isChild === 'true',
     confirmed: confirmed === 'true',
     priority: parseInt(priority as string, 10),
+    age: (age as string)?.length > 0 ? parseInt(age as string, 10) : null,
+    isActive: isActive === 'true',
   };
   const method = isUpdate ? 'put' : 'post';
   const params = isUpdate ? [data.id] : [];
