@@ -1,6 +1,7 @@
 import client from '@utilities/client';
 import { IGuest, IGuestModel } from '@shared/types/guest';
 import { fmtDateToModel, fmtDateToUI } from '@utilities/datetime';
+import { IFiltersGuest } from './types';
 
 const fmtGuestReturned = (guest: IGuest | IGuestModel | null) => {
   if (guest) {
@@ -25,11 +26,13 @@ export const getGuestList = async () => {
   return formattedGuests as Array<IGuest>;
 };
 
-export const getGuest = async (id: string, priority?: number | null) => {
+export const getGuest = async (id: string, filters: IFiltersGuest = {}) => {
+  const { priority, isActive } = filters;
   const guest: IGuestModel | null = await client.guest.findFirst({
     where: {
       id,
       ...(!!priority && { priority }),
+      ...(!!isActive && { isActive }),
     },
   });
 
