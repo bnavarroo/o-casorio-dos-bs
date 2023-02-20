@@ -19,7 +19,16 @@ export default async function handler(
     }
     case 'POST': {
       try {
-        const { id, name, internalName, isChild, confirmed, priority } = body;
+        const {
+          id,
+          name,
+          internalName,
+          isChild,
+          confirmed,
+          priority,
+          age,
+          isActive,
+        } = body;
         const formattedId = id || randomString(6);
         const guest: IGuest = {
           id: formattedId,
@@ -28,6 +37,8 @@ export default async function handler(
           isChild,
           confirmed,
           priority,
+          age,
+          isActive,
         };
         const newGuest = await createGuest(guest);
         res.status(200).json({ status: 200, error: false, data: newGuest });

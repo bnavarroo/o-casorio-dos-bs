@@ -29,6 +29,8 @@ export const getSSRProps = async (
       confirmed: query?.confirmed === 'true',
       priority: parseInt(query?.priority as string, 10),
       updatedAt: query?.updatedAt as string,
+      age: parseInt(query?.age as string, 10),
+      isActive: query?.isActive === 'true',
     };
 
     return {

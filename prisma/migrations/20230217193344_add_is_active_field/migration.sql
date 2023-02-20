@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Guest` ADD COLUMN `isActive` BOOLEAN NOT NULL DEFAULT true;
