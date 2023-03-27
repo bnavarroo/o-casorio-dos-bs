@@ -14,7 +14,10 @@ export const getSSRProps = async (
   const { id: qsId } = qs;
 
   if (qsId && !id) {
-    const guest = await getGuest(qsId as string);
+    const guest = await getGuest(qsId as string, {
+      priority: 1,
+      isActive: true,
+    });
     if (guest) {
       const { maxAge, path, keys } = COOKIES_CONFIG;
       nookies.set(ctx, keys.guest, JSON.stringify(guest), {

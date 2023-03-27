@@ -1,8 +1,8 @@
 import Router from 'next/router';
 import { ChangeEvent } from 'react';
 import { getEndpoint } from '@config/api';
-import { executeHttpRequest } from '@utilities/http';
-import { TSetState } from '@shared/types/_globals';
+import { executeHttpRequest, parseObjectToQs } from '@utilities/http';
+import { TSetState, TStringMap } from '@shared/types/_globals';
 import { IGuest } from '@shared/types/guest';
 
 export const handleSubmit = async (
@@ -18,8 +18,12 @@ export const handleSubmit = async (
     setLoading(true);
     const id = (guestId as string)?.trim();
     const url = getEndpoint('guest', [id]);
+    const qs = parseObjectToQs({
+      priority: 1,
+      isActive: true,
+    } as unknown as TStringMap);
     const response = await executeHttpRequest<IGuest>({
-      url: `${url}?priority=1`,
+      url: `${url}${qs}`,
       method: 'get',
     });
     if (!response?.error) {

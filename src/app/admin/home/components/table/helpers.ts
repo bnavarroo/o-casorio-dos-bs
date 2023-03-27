@@ -25,6 +25,11 @@ export const tableHeader = [
     className: '',
   },
   {
+    field: 'age',
+    description: 'Idade',
+    className: '',
+  },
+  {
     field: 'confirmed',
     description: 'Confirmado?',
     className: '',
@@ -45,6 +50,15 @@ export const tableHeader = [
     className: '',
   },
 ];
+
+export const getLineClass = (guest: IGuest) => {
+  const classes = [
+    guest?.confirmed ? 'confirmed' : '',
+    !guest?.isActive ? 'disabled' : '',
+  ].filter((item) => item !== '');
+
+  return classes?.join(' ');
+};
 
 export const handleEditGuest = (guest: IGuest) => () => {
   const qs = parseObjectToQs(guest as unknown as TStringMap);

@@ -23,6 +23,15 @@ export const Table = styled.table`
       background: rgba(255, 255, 255, 0.5);
     }
 
+    .disabled {
+      background: #ffeaea;
+      color: #c01e1e;
+
+      button {
+        color: #c01e1e;
+      }
+    }
+
     @media (max-width: ${theme.breakpoints.tablet.max}) {
       thead {
         display: none;
@@ -69,12 +78,12 @@ export const Table = styled.table`
             &:nth-of-type(1):before {
               padding-top: 20px;
             }
-            &:nth-of-type(7),
-            &:nth-of-type(7):before {
-              padding-bottom: 10px;
-            }
             &:nth-of-type(8),
             &:nth-of-type(8):before {
+              padding-bottom: 10px;
+            }
+            &:nth-of-type(9),
+            &:nth-of-type(9):before {
               padding-bottom: 20px;
             }
 
@@ -91,12 +100,15 @@ export const Table = styled.table`
               content: 'Criança:';
             }
             &:nth-of-type(5):before {
-              content: 'Confirmado:';
+              content: 'Idade:';
             }
             &:nth-of-type(6):before {
-              content: 'Prioridade:';
+              content: 'Confirmado:';
             }
             &:nth-of-type(7):before {
+              content: 'Prioridade:';
+            }
+            &:nth-of-type(8):before {
               content: 'Atualizado em:';
             }
           }
