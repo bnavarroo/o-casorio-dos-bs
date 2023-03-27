@@ -1,6 +1,6 @@
 import { Button } from '@styles/ui/button';
 import { IProps } from './types';
-import { tableHeader, handleEditGuest } from './helpers';
+import { tableHeader, handleEditGuest, getLineClass } from './helpers';
 import * as Styled from './styles';
 
 const TableGuest: React.FC<IProps> = ({ data, totalItems }) => (
@@ -22,11 +22,12 @@ const TableGuest: React.FC<IProps> = ({ data, totalItems }) => (
       </thead>
       <tbody>
         {data?.map((guest) => (
-          <tr key={guest?.id} className={guest?.confirmed ? 'confirmed' : ''}>
+          <tr key={guest?.id} className={getLineClass(guest)}>
             <td>{guest?.id}</td>
             <td className="text-left">{guest?.name}</td>
             <td className="text-left">{guest?.internalName || '-'}</td>
             <td>{guest?.isChild ? 'Sim' : 'Não'}</td>
+            <td>{guest?.age ?? '-'}</td>
             <td>{guest?.confirmed ? 'Sim' : 'Não'}</td>
             <td>{guest?.priority}</td>
             <td>{guest?.updatedAt}</td>

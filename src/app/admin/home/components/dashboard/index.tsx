@@ -6,25 +6,30 @@ const HomeDashboardComponent: React.FC<{ guestList: Array<IGuest> }> = ({
   guestList,
 }) => {
   const {
-    totalMainPriority,
     totalAdults,
-    totalChild,
+    totalPayingChildren,
+    totalFreeChildren,
+    totalMainPriority,
     totalConfirmed,
     totalNotConfirmed,
   } = getDahsboardData(guestList);
   return (
     <Styled.Wrapper>
       <Styled.Card as="li">
-        <p>Lista Principal</p>
+        <p>Prioridade 1</p>
         {totalMainPriority}
       </Styled.Card>
       <Styled.Card as="li">
-        <p>+10 anos</p>
+        <p>Adultos</p>
         {totalAdults}
       </Styled.Card>
       <Styled.Card as="li">
-        <p>Crianças (-10 anos)</p>
-        {totalChild}
+        <p>Crianças Pagantes</p>
+        {totalPayingChildren}
+      </Styled.Card>
+      <Styled.Card as="li">
+        <p>Crianças Não Pagantes</p>
+        {totalFreeChildren}
       </Styled.Card>
       <Styled.Card as="li">
         <p>Confirmados</p>

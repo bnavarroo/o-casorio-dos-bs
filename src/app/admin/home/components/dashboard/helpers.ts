@@ -1,25 +1,51 @@
 import { IGuest } from '@shared/types/guest';
 
 export const getDahsboardData = (data: Array<IGuest>) => {
-  const totalMainPriority =
-    data?.filter(({ priority }) => priority === 1)?.length ?? 0; // total de convidados prioridade 1;
+  const adults = data?.filter(
+    ({ priority, isChild }) => !isChild && priority === 1
+  ); // Adultos P1
+
+  const payingChildren = data?.filter(({ priority, isChild, age }) => {
+    const formattedAge = age ?? 0;
+    return isChild && formattedAge > 5 && formattedAge <= 10 && priority === 1;
+  }); // Crianças pagantes p1
+
+  const totalFreeChildren =
+    data?.filter(({ priority, isChild, age }) => {
+      const formattedAge = age ?? 0;
+      return isChild && formattedAge <= 5 && priority === 1;
+    })?.length ?? 0; // Total de crianças não pagantes p1
+
+  const totalAdults = adults?.length;
+  const totalPayingChildren = payingChildren?.length;
+
+  const totalMainPriority = totalAdults + totalPayingChildren; // Total P1: Adultos + Crianças Pagantes
+
   const totalSecondPriority =
-    data?.filter(({ priority }) => priority === 2)?.length ?? 0; // total de convidados prioridade 2;
-  const total = totalMainPriority + totalSecondPriority;
-  const totalAdults =
-    data?.filter(({ priority, isChild }) => !isChild && priority === 1)
-      ?.length ?? 0; // total de adultos/crianças com +10 anos
-  const totalChild = totalMainPriority - totalAdults; // total de crianças
-  const totalConfirmed =
-    data?.filter(({ confirmed }) => confirmed)?.length ?? 0; // total de confirmados
-  const totalNotConfirmed = totalAdults - totalConfirmed; // total de não confirmados
+    data?.filter(({ priority }) => priority === 2)?.length ?? 0; // Total P2
+
+  // Adultos confirmados
+  const totalConfirmedAdults = adults?.filter(
+    ({ confirmed }) => confirmed
+  )?.length; // Total de confirmados
+
+  // Crianças pagantes confirmadas
+  const totalConfirmedChildren = payingChildren?.filter(
+    ({ confirmed }) => confirmed
+  )?.length; // Total de confirmados
+
+  const totalConfirmed = Math.round(
+    totalConfirmedAdults + totalConfirmedChildren / 2
+  );
+
+  const totalNotConfirmed = totalMainPriority - totalConfirmed; // total de não confirmados
 
   return {
+    totalAdults,
+    totalPayingChildren,
+    totalFreeChildren,
     totalMainPriority,
     totalSecondPriority,
-    total,
-    totalAdults,
-    totalChild,
     totalConfirmed,
     totalNotConfirmed,
   };
