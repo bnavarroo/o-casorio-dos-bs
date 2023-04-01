@@ -38,7 +38,7 @@ export const getDahsboardData = (data: Array<IGuest>) => {
     totalConfirmedAdults + totalConfirmedChildren / 2
   );
 
-  const totalNotConfirmed = totalMainPriority - totalConfirmed; // total de não confirmados
+  const totalNotConfirmed = Math.round((totalAdults + totalPayingChildren / 2) - totalConfirmed); // total de não confirmados
 
   return {
     totalAdults,
