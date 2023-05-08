@@ -19,7 +19,10 @@ export const getDahsboardData = (data: Array<IGuest>) => {
   const totalAdults = adults?.length;
   const totalPayingChildren = payingChildren?.length;
 
-  const totalMainPriority = totalAdults + totalPayingChildren; // Total P1: Adultos + Crianças Pagantes
+  const totalMainPriority =
+    totalAdults + totalPayingChildren + totalFreeChildren; // Total pessoas P1
+
+  const totalInvitationsMainPriority = totalAdults + totalPayingChildren / 2; // Total convites P1: Adultos + Crianças Pagantes / 2 (a cada 2 crianças, é 1 convite)
 
   const totalSecondPriority =
     data?.filter(({ priority }) => priority === 2)?.length ?? 0; // Total P2
@@ -38,7 +41,9 @@ export const getDahsboardData = (data: Array<IGuest>) => {
     totalConfirmedAdults + totalConfirmedChildren / 2
   );
 
-  const totalNotConfirmed = Math.round((totalAdults + totalPayingChildren / 2) - totalConfirmed); // total de não confirmados
+  const totalNotConfirmed = Math.round(
+    totalAdults + totalPayingChildren / 2 - totalConfirmed
+  ); // total de não confirmados
 
   return {
     totalAdults,
@@ -46,6 +51,7 @@ export const getDahsboardData = (data: Array<IGuest>) => {
     totalFreeChildren,
     totalMainPriority,
     totalSecondPriority,
+    totalInvitationsMainPriority,
     totalConfirmed,
     totalNotConfirmed,
   };

@@ -10,13 +10,14 @@ const HomeDashboardComponent: React.FC<{ guestList: Array<IGuest> }> = ({
     totalPayingChildren,
     totalFreeChildren,
     totalMainPriority,
+    totalInvitationsMainPriority,
     totalConfirmed,
     totalNotConfirmed,
   } = getDahsboardData(guestList);
   return (
     <Styled.Wrapper>
       <Styled.Card as="li">
-        <p>Prioridade 1</p>
+        <p>Convidados P1</p>
         {totalMainPriority}
       </Styled.Card>
       <Styled.Card as="li">
@@ -24,12 +25,16 @@ const HomeDashboardComponent: React.FC<{ guestList: Array<IGuest> }> = ({
         {totalAdults}
       </Styled.Card>
       <Styled.Card as="li">
-        <p>Crianças Pagantes</p>
+        <p>Total Crianças</p>
+        {totalPayingChildren + totalFreeChildren}
+      </Styled.Card>
+      <Styled.Card as="li">
+        <p>Crianças entre 6 e 10 anos</p>
         {totalPayingChildren}
       </Styled.Card>
       <Styled.Card as="li">
-        <p>Crianças Não Pagantes</p>
-        {totalFreeChildren}
+        <p>Convites P1</p>
+        {totalInvitationsMainPriority}
       </Styled.Card>
       <Styled.Card as="li">
         <p>Confirmados</p>
